@@ -12,4 +12,4 @@ connection.connect((err) => {
     console.log("Connected successfully");    
 });
 
-export default connection
+export default connection;
