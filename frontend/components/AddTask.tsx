@@ -31,6 +31,17 @@ export default async function AddTask() {
             <Text>Title</Text>
             <TextInput 
                placeholder="Enter title"
+               onChangeText={setTitle}
+            />
+            <Text>Title</Text>
+            <TextInput 
+               placeholder="Enter title"
+               onChangeText={setTitle}
+            />
+           <Text>Title</Text>
+            <TextInput 
+               placeholder="Enter title"
+               onChangeText={setTitle}
             />
          </View>
     )
