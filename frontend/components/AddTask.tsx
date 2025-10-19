@@ -30,8 +30,8 @@ export default async function AddTask() {
             <Text>Add Task</Text>
             <Text>Title</Text>
             <TextInput 
-               
-               />
+               placeholder="Enter title"
+            />
          </View>
     )
 }
