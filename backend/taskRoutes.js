@@ -11,6 +11,9 @@ route.post('/add', (req, res) => {
             console.error(err, "Database error")
             return res.status(500).json("Database error");
           }
+
+          console.log("Inserted successfully", result.insertId)
+          return res.status(201).json("User inserted successfully")
        });
     }
 
