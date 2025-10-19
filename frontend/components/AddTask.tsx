@@ -17,8 +17,9 @@ export default async function AddTask() {
         setDescription("")
         setDue_date("")
         setLoading(false);
-        setError("Unable to create task. try again later")
     } catch (error) {
-        
+           setError("Unable to create task. try again later")
+    } finally {
+        setLoading(false);
     }
 }
