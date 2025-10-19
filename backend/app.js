@@ -1,10 +1,9 @@
 import express from "express"
+import taskRoute from "./taskRoutes.js"
 
 const app = express();
 
-app.route('/', (req, res) => {
-  console.log("Server is running")  
-})
+app.use('/task', taskRoute);
 
 app.listen(300, () => {
     console.log("http://localhost:3000")
