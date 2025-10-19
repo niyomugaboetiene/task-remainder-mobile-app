@@ -12,7 +12,9 @@ export default async function AddTask() {
         axios.post('http://localhost:5000/task/add', {
             titile, description, due_date, status
         });
-        
+        setTitle("");
+        setDescription("")
+        setDue_date("")
         setLoading(false);
 
     }
