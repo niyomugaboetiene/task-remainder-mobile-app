@@ -10,6 +10,7 @@ type ScreenContentProps = {
 export const ScreenContent = ({ children} : ScreenContentProps) => {
   return (
     <View className={styles.container}>
+      <View className={styles.separator} />
       {children}
     </View>
   );
