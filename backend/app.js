@@ -6,3 +6,8 @@ const connection = mysql.createConnection({
     password: '',
     database: 'task-remainder-app'
 })
+
+connection.connect((err) => {
+    if (err) console.log("ERROR:", err)
+    console.log("Connected successfully");    
+})
