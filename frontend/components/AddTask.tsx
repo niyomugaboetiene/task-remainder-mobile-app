@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import { View, Text, TextInput } from "react-native"; 
+import { View, Text, TextInput, TouchableOpacity } from "react-native"; 
 
 export default async function AddTask() {
     const [titile, setTitle] = useState("")
@@ -9,20 +9,24 @@ export default async function AddTask() {
     const [status, setStatus] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    try {
-        setLoading(true)
-        axios.post('http://localhost:5000/task/add', {
-            titile, description, due_date, status
-        });
-        setTitle("");
-        setDescription("")
-        setDue_date("")
-        setLoading(false);
-    } catch (error) {
-           setError("Unable to create task. try again later")
-    } finally {
-        setLoading(false);
+
+    function AddTask() {
+       try {
+           setLoading(true)
+           axios.post('http://localhost:5000/task/add', {
+              titile, description, due_date, status
+           });
+           setTitle("");
+           setDescription("")
+           setDue_date("")
+           setLoading(false);
+        } catch (error) {
+             setError("Unable to create task. try again later")
+        } finally {
+           setLoading(false);
+       }
     }
+
 
 
     return (
@@ -33,16 +37,22 @@ export default async function AddTask() {
                placeholder="Enter title"
                onChangeText={setTitle}
             />
-            <Text>Title</Text>
+            <Text>Description</Text>
             <TextInput 
-               placeholder="Enter title"
-               onChangeText={setTitle}
+               placeholder="Enter Deskription"
+               onChangeText={setDescription}
             />
-           <Text>Title</Text>
+           <Text>Finishing Date</Text>
             <TextInput 
-               placeholder="Enter title"
-               onChangeText={setTitle}
+               placeholder="Enter Finishing Date"
+               onChangeText={setDue_date}
             />
+
+          <TouchableOpacity
+              onPress={AddTask}
+          >
+                   <Text>Add</Text>
+          </TouchableOpacity>
          </View>
     )
 }
