@@ -1,6 +1,7 @@
 import express from "express"
 import connection from "./conn";
 const route = express.Router()
+const app = express();
 
 route.post('/add', (req, res) => {
     const { name, description, due_date, status } = req.body;
@@ -9,4 +10,8 @@ route.post('/add', (req, res) => {
         if (err) console.log("ERROR", err)
         console.log("Inserted successfully")
     });
+})
+
+app.listen(3000, () => {
+    console.log("http://localhost:3000")
 })
