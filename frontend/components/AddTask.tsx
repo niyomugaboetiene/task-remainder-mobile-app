@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { View, Text, TextInput } from "react-native"; 
 
 export default async function AddTask() {
     const [titile, setTitle] = useState("")
@@ -22,4 +23,15 @@ export default async function AddTask() {
     } finally {
         setLoading(false);
     }
+
+
+    return (
+         <View>
+            <Text>Add Task</Text>
+            <Text>Title</Text>
+            <TextInput 
+               
+               />
+         </View>
+    )
 }
