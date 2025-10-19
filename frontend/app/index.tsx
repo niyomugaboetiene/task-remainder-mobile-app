@@ -21,8 +21,3 @@ export default function Home() {
   );
 }
 
-
-const styles = {
-  container: "flex flex-1 bg-white",
-}
-
