@@ -7,6 +7,7 @@ export default async function AddTask() {
     const [due_date, setDue_date] = useState("");
     const [status, setStatus] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
     try {
         setLoading(true)
         axios.post('http://localhost:5000/task/add', {
@@ -16,6 +17,7 @@ export default async function AddTask() {
         setDescription("")
         setDue_date("")
         setLoading(false);
-
+    } catch (error) {
+        
     }
 }
