@@ -1,5 +1,5 @@
 import express from "express"
-import connection from "./conn";
+import connection from "./conn.js";
 const route = express.Router()
 const app = express();
 
