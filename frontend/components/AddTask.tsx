@@ -12,6 +12,7 @@ export default  function AddTask() {
 
     async function AddTask() {
       const createdAt = new Date();
+      console.log(createdAt)
        try {
            setLoading(true)
            setError("")
