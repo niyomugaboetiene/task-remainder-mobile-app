@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import { View, Text, TextInput, TouchableOpacity } from "react-native"; 
+import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from "react-native"; 
 
 export default  function AddTask() {
     const [titile, setTitle] = useState("")
@@ -32,7 +32,6 @@ export default  function AddTask() {
        }
     }
  
-    if (loading) return <View>Loading..</View>
     return (
          <View>
             <Text>Add Task</Text>
@@ -53,11 +52,18 @@ export default  function AddTask() {
                onChangeText={setDue_date}
             />
 
+         {loading ? (
+            <ActivityIndicator 
+              size="large" color="blue" 
+            />
+         ) : (
           <TouchableOpacity
               onPress={AddTask}
           >
                    <Text>Add</Text>
           </TouchableOpacity>
+         )}
+
 
           {error && (
             <Text>{error}</Text>
