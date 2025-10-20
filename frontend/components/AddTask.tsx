@@ -11,13 +11,11 @@ export default  function AddTask() {
     const [error, setError] = useState("");
 
     async function AddTask() {
-      const createdAt = new Date();
-      console.log(createdAt)
        try {
            setLoading(true)
            setError("")
            await axios.post('http://localhost:5000/task/add', {
-              titile, description, due_date, status, createdAt
+              titile, description, due_date, status
            }, {
             headers: {
                'Content-Type': 'application/json'
@@ -28,7 +26,6 @@ export default  function AddTask() {
            setDue_date("")
            setStatus("pending")
         } catch (error) {
-             
              setError("Unable to create task. try again later")
         } finally {
            setLoading(false);
