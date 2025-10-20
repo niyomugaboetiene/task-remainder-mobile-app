@@ -27,7 +27,8 @@ export default async function AddTask() {
        }
     }
 
-
+   if (loading) return <View>Loading......,</View>
+   if (error) return <View>{error}</View>
 
     return (
          <View>
