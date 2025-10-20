@@ -27,6 +27,7 @@ export default  function AddTask() {
            setStatus("pending")
         } catch (error) {
              setError("Unable to create task. try again later")
+             console.log("ERROR", error)
         } finally {
            setLoading(false);
        }
