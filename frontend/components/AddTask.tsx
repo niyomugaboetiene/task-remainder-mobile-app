@@ -11,11 +11,12 @@ export default  function AddTask() {
     const [error, setError] = useState("");
 
     async function AddTask() {
+      const createdAt = new Date();
        try {
            setLoading(true)
            setError("")
            await axios.post('http://localhost:5000/task/add', {
-              titile, description, due_date, status
+              titile, description, due_date, status, createdAt
            }, {
             headers: {
                'Content-Type': 'application/json'
