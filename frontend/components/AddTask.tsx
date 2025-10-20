@@ -16,21 +16,23 @@ export default  function AddTask() {
            setError("")
            await axios.post('http://localhost:5000/task/add', {
               titile, description, due_date, status
+           }, {
+            headers: {
+               'Content-Type': 'application/json'
+            }
            });
            setTitle("");
            setDescription("")
            setDue_date("")
-           setLoading(false);
+           setStatus("pending")
         } catch (error) {
              setError("Unable to create task. try again later")
         } finally {
            setLoading(false);
        }
     }
-
-   if (loading) return <View>Loading......,</View>
-   if (error) return <View>{error}</View>
-
+ 
+    if (loading) return <View>Loading..</View>
     return (
          <View>
             <Text>Add Task</Text>
@@ -47,7 +49,7 @@ export default  function AddTask() {
             />
            <Text>Finishing Date</Text>
             <TextInput 
-               placeholder="Enter Finishing Date"
+               placeholder="YYY-MM-DD"
                onChangeText={setDue_date}
             />
 
@@ -56,6 +58,10 @@ export default  function AddTask() {
           >
                    <Text>Add</Text>
           </TouchableOpacity>
+
+          {error && (
+            <Text>{error}</Text>
+          )}
          </View>
     )
 }
