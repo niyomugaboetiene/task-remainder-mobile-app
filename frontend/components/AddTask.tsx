@@ -2,18 +2,19 @@ import axios from "axios"
 import { useState } from "react"
 import { View, Text, TextInput, TouchableOpacity } from "react-native"; 
 
-export default async function AddTask() {
+export default  function AddTask() {
     const [titile, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [due_date, setDue_date] = useState("");
-    const [status, setStatus] = useState(false);
+    const [status, setStatus] = useState("pending");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    function AddTask() {
+    async function AddTask() {
        try {
            setLoading(true)
-           axios.post('http://localhost:5000/task/add', {
+           setError("")
+           await axios.post('http://localhost:5000/task/add', {
               titile, description, due_date, status
            });
            setTitle("");
