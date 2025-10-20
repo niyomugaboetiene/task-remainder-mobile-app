@@ -15,7 +15,7 @@ export default  function AddTask() {
        try {
            setLoading(true)
            setError("")
-           await axios.post('http://localhost:5000/task/add', {
+           await axios.post('http://10.0.2.2:5000/task/add', {
               titile, description, due_date, status, createdAt
            }, {
             headers: {
@@ -50,7 +50,7 @@ export default  function AddTask() {
             />
            <Text>Finishing Date</Text>
             <TextInput 
-               placeholder="YYY-MM-DD"
+               placeholder="YYYY-MM-DD"
                onChangeText={setDue_date}
             />
 

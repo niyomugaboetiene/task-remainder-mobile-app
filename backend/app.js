@@ -5,7 +5,7 @@ import taskRoute from "./taskRoutes.js"
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:8081',
+    origin: '*',
     credentials: true
 }))
 app.use('/task', taskRoute);
