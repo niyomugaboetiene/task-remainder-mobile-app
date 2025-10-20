@@ -27,6 +27,7 @@ export default  function AddTask() {
            setDue_date("")
            setStatus("pending")
         } catch (error) {
+             
              setError("Unable to create task. try again later")
         } finally {
            setLoading(false);
