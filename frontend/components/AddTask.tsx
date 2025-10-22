@@ -3,7 +3,7 @@ import { useState } from "react"
 import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from "react-native"; 
 
 export default  function AddTask() {
-    const [titile, setTitle] = useState("")
+    const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [due_date, setDue_date] = useState("");
     const [status, setStatus] = useState("pending");
@@ -15,7 +15,7 @@ export default  function AddTask() {
            setLoading(true)
            setError("")
            await axios.post('http://localhost:5000/task/add', {
-              titile, description, due_date, status
+              title, description, due_date, status
            }, {
             headers: {
                'Content-Type': 'application/json'
@@ -61,7 +61,10 @@ export default  function AddTask() {
           <TouchableOpacity
               onPress={AddTask}
           >
-                   <Text>Add</Text>
+            <View>
+               <Text>Add Task</Text>
+            </View>
+
           </TouchableOpacity>
          )}
 
