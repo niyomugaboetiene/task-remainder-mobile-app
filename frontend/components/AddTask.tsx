@@ -46,7 +46,7 @@ export default  function AddTask() {
                <View className="mt-4">
                 <Text className="text-lg">Title</Text>
                 <TextInput 
-                  className="" 
+                  className="bg-gray-700 p-3 rounded-xl placeholder:text-white" 
                   placeholder="Enter title"
                   onChangeText={setTitle}
             />
