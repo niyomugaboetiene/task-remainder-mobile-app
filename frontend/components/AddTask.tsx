@@ -49,14 +49,17 @@ export default  function AddTask() {
                   className="bg-gray-700 p-3 rounded-xl placeholder:text-white" 
                   placeholder="Enter title"
                   onChangeText={setTitle}
-            />
-               </View>
+                 />
+             </View>
 
-            <Text>Description</Text>
-            <TextInput 
-               placeholder="Enter Deskription"
-               onChangeText={setDescription}
-            />
+            <View>
+              <Text>Description</Text>
+              <TextInput 
+                placeholder="Enter Deskription"
+                onChangeText={setDescription}
+              />
+            </View>
+ 
            <Text>Finishing Date</Text>
             <TextInput 
                placeholder="YYYY-MM-DD"
