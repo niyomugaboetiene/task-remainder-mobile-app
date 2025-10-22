@@ -11,6 +11,9 @@ export default  function AddTask() {
     const [error, setError] = useState("");
 
     async function AddTask() {
+      if (!title || !description || !status || !due_date) {
+         return;
+      }
        try {
            setLoading(true)
            setError("")
