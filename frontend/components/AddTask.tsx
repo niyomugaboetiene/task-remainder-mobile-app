@@ -12,13 +12,17 @@ export default  function AddTask() {
 
     async function AddTask() {
       if (!title || !description || !status || !due_date) {
+         setError("All fields are required");
          return;
       }
        try {
            setLoading(true)
            setError("")
            await axios.post('http://localhost:5000/task/add', {
-              title, description, due_date, status
+              title,
+              description, 
+              due_date, 
+              status
            }, {
             headers: {
                'Content-Type': 'application/json'
