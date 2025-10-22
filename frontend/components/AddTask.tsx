@@ -41,7 +41,7 @@ export default  function AddTask() {
     }
  
     return (
-         <View>
+         <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300">
             <Text>Add Task</Text>
             <Text>Title</Text>
             <TextInput 
