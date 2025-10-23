@@ -36,6 +36,7 @@ route.get('/sign-up', async (req, res) => {
            if (bcrypt.compareSync(password, hashedPassword)) {
             req.session.user_id = result[0].user_id,
             req.session.username = result[0].username
+            return res.status(200).json("Login successfully", {name: req.secure.username})
            }
          }
    })
