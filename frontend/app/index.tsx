@@ -11,6 +11,9 @@ import SignUp from '@/components/SignUp';
 
 const Tab = createBottomTabNavigator();
 export default function Home() {  
+   const checkLogin = () => {
+    
+   }
   return (
          <View className='flex-1'>
              <Container>
