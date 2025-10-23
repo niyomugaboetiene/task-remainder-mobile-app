@@ -9,6 +9,7 @@ function SignUp() {
        const [password, setPassword] = useState("");
        const [success, setSuccess] = useState("");
        const [error, setError] = useState("");
+       const [loggedIn, setLoggedIn] = useState(false);
        const navigation = useNavigation();
 
        const Login = async () => {
@@ -22,7 +23,7 @@ function SignUp() {
                 setSuccess("")
              }, 5000);
            setError("");
-           navigation.getParent()?.navigate("home");
+           setLoggedIn(true);
 
         } catch (err: any) {
             const errorMessage = err.response?.data?.error;
