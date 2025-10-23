@@ -8,7 +8,7 @@ app.use(cors({
     origin: '*',
     credentials: true
 }))
-app.use('/task', taskRoute);
+app.use('/', taskRoute);
 
 app.listen(5000, () => {
     console.log("http://localhost:5000")
