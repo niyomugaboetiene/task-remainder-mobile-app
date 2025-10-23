@@ -4,7 +4,8 @@ import connection from "./conn.js";
 const route = express.Router();
 
 route.post('/sign-in', (req, res) => {
-  
+   const { username, email, password } = req.body;
+   const sql = "INSERT INTO users(username, email, password) VALUES(?, ?, ?)";
 })
 route.post('/add', (req, res) => {
   const { title, description, due_date, status } = req.body;
