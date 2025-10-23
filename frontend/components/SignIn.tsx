@@ -66,11 +66,11 @@ import axios from "axios";
 
            <View className="mt-4">
             <TouchableOpacity 
-              className="bg-green-200 p-4 rounded-lg"
+              className="bg-green-200 p-4 rounded-lg active:bg-green-400"
               onPress={CreateAccount}
             >
                 <View>
-                    <Text>Create Account</Text>
+                    <Text className="text-center font-bold">Create Account</Text>
                 </View>
             </TouchableOpacity>
            </View>
