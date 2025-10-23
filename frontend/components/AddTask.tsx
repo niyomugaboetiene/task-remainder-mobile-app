@@ -19,7 +19,7 @@ export default  function AddTask() {
        try {
            setLoading(true)
            setError("")
-           await axios.post('http://localhost:5000/task/add', {
+           await axios.post('http://localhost:5000/add', {
               title,
               description, 
               due_date, 
