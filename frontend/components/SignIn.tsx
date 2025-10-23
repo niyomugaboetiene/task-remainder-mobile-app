@@ -62,6 +62,10 @@ import axios from "axios";
                 </View>
             </TouchableOpacity>
         </View>
+
+        {success && (
+         <Text>{success}</Text>
+        )}
     </View>
    )
 }
