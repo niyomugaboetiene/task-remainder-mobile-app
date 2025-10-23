@@ -12,12 +12,12 @@ function SignUp() {
 
        const Login = async () => {
         try {
-             await axios.post('http://localhost:5000/sign-in', { username, email, password }, { withCredentials: true  });
+             const res = await axios.post('http://localhost:5000/sign-in', { username, email, password }, { withCredentials: true  });
              setIsLoggedIn(true);
              setUsername("");
              setPassword("");
              setEmail("");
-             setSuccess("Logged In successfully");
+             setSuccess(`Logged In successfully ${res.data.name}`);
         } catch (err) {
              setError("Unable to login try again later");
             setIsLoggedIn(false);
@@ -56,7 +56,7 @@ function SignUp() {
                    <View className="mt-4">
                     <TouchableOpacity 
                       className="bg-green-200 p-4 rounded-lg active:bg-green-400"
-                      onPress={CreateAccount}
+                      onPress={Login}
                     >
                         <View>
                             <Text className="text-center font-bold">Create Account</Text>
