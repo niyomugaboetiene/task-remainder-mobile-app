@@ -23,14 +23,19 @@ route.post('/sign-in', async (req, res) => {
 route.post('/sign-up', async (req, res) => {
    const { username, email, password } = req.body;
    const sqlUsers = 'SELECT * FROM users';
-   connection.query(sqlUsers, (err, result) => {
+   connection.query(sqlUsers, (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message})
     }
-    if (result > 0) {
+    if (results > 0) {
          const sql = "SELECT * FROM users WHERE username = ? AND email = ? ";
          connection.query(sql, [username, email], (err, result) => {
-          
+           if (err) {
+            return res.status(500).json({ error: err.message })
+           } 
+           if (results[0].email == result[0].message) {
+            return res.status(401).json("Email must be unique");
+           }
          })
     }
    })
