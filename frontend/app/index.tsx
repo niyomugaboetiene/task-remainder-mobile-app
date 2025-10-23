@@ -19,11 +19,7 @@ export default function Home() {
     const checkLogin = async () => {
       try {
         const res = await axios.get('http://localhost:5000/loggedIn', { withCredentials: true });
-        if (res.data.loggedIn) {
-          setLoggedIn(true);
-        } else {
-          setLoggedIn(false);
-        }
+        setLoggedIn(res.data.loggedIn);
       } catch (err) {
         setLoggedIn(false);
       }
@@ -37,7 +33,6 @@ export default function Home() {
         <ScreenContent>
           {loggedIn ? (
             <Tab.Navigator
-              initialRouteName="Home"
               screenOptions={{
                 headerShown: false,
               }}
@@ -48,9 +43,7 @@ export default function Home() {
               <Tab.Screen name="Settings" component={Dashboard} />
             </Tab.Navigator>
           ) : (
-            <View>
-              <SignIn />
-            </View>
+            <SignUp />
           )}
         </ScreenContent>
       </Container>
