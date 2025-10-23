@@ -5,7 +5,7 @@ import { useState } from "react"
 function Dashboard(){
     const [userInfo, setUserInfo] = useState("");
 
-    const res: any = axios.get('/http://localhost:5000/loggedIn', {withCredentials: true});
+    const res: any = axios.get('http://localhost:5000/loggedIn', {withCredentials: true});
     setUserInfo(res);
 
     return (
