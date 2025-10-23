@@ -37,7 +37,7 @@ export default function Home() {
                 headerShown: false,
               }}
             >
-              <Tab.Screen name="Home" component={Dashboard} />
+              <Tab.Screen name="Home" component={Dashboard} options={{ tabBarIcon: ({ color, size}) => <MaterialIcons name='home' size={size} color={color}/>}} />
               <Tab.Screen name="Add-task" component={AddTask} />
               <Tab.Screen name="Your-task" component={Dashboard} />
               <Tab.Screen name="Settings" component={Dashboard} />
