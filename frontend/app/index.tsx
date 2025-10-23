@@ -27,6 +27,9 @@ export default function Home() {
     checkLogin();
   }, []);
 
+  const handleLoginSuccess = () => {
+    setLoggedIn(true);
+  }
   return (
     <View className="flex-1">
       <Container>
@@ -59,7 +62,7 @@ export default function Home() {
                 tabBarIcon: ({ color, size }) =>  <MaterialIcons name='person-add' size={size} color={color} />
               }}
               />
-              <Tab.Screen name="Sign-In" component={SignUp} options={{
+              <Tab.Screen name="Sign-In" component={() => <SignUp onLoginSuccess={handleLoginSuccess} />} options={{
                 tabBarIcon: ({ color, size }) => <MaterialIcons name='login' size={size} color={color}/>
               }}/>
             </Tab.Navigator>        

@@ -3,13 +3,16 @@ import axios from "axios"
 import { useState } from "react"; 
 import { useNavigation } from "@react-navigation/native";
 
-function SignUp() {
+type SignUpProps = {
+   onLoginSuccess: () => void;
+};
+
+function SignUp({ onLoginSuccess }: SignUpProps) {
        const [username, setUsername] = useState("");
        const [email, setEmail] = useState("");
        const [password, setPassword] = useState("");
        const [success, setSuccess] = useState("");
        const [error, setError] = useState("");
-       const [loggedIn, setLoggedIn] = useState(false);
        const navigation = useNavigation();
 
        const Login = async () => {
@@ -23,7 +26,7 @@ function SignUp() {
                 setSuccess("")
              }, 5000);
            setError("");
-           setLoggedIn(true);
+           onLoginSuccess();
 
         } catch (err: any) {
             const errorMessage = err.response?.data?.error;
