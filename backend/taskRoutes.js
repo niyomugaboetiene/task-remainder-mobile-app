@@ -1,7 +1,6 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import connection from "./conn.js";
-import { use } from "react";
 
 const route = express.Router();
 
@@ -22,20 +21,12 @@ route.post('/sign-in', async (req, res) => {
 
 route.post('/sign-up', async (req, res) => {
    const { username, email, password } = req.body;
-   const sqlUsers = 'SELECT * FROM users';
-   connection.query(sqlUsers, (err, results) => {
-    if (err) {
-      return res.status(500).json({ error: err.message})
-    }
-    if (results > 0) {
-         const sql = "SELECT * FROM users WHERE username = ? AND email = ? ";
-         connection.query(sql, [username, email], (err, result) => {
-           if (err) {
-            return res.status(500).json({ error: err.message })
-           } 
-           if (results[0].email == result[0].message) {
-            return res.status(401).json("Email must be unique");
-           } else {
+   const sql = "SELECT * FROM users WHERE username = ? AND email = ? AND password = ?";
+   connection.query(sql, [username, email, password], (err, result) => {
+         if (err) {
+           return res.status(500).json({ error: err.message });
+         } 
+         if (result.length > 0) {
            const hashedPassword = result[0].password;
            if (bcrypt.compareSync(password, hashedPassword)) {
             req.session.user_id = result[0].user_id,
@@ -44,9 +35,7 @@ route.post('/sign-up', async (req, res) => {
            } else {
             return res.status(401).json("Incorrect password")
            }
-           }
-         })
-    }
+         }
    })
 })
 route.post('/add', (req, res) => {
