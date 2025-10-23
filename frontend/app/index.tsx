@@ -46,6 +46,8 @@ export default function Home() {
             <Tab.Navigator
               screenOptions={{
                 headerShown: false,
+                tabBarActiveTintColor: 'white',
+                tabBarInactiveTintColor: '#e5e7eb',
                 tabBarStyle: {
                   backgroundColor: ''
                 }
