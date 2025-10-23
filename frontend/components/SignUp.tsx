@@ -6,11 +6,17 @@ function SignUp() {
        const [username, setUsername] = useState("");
        const [email, setEmail] = useState("");
        const [password, setPassword] = useState("");
-       const [success, setSuccess] = useState("");
        const [error, setError] = useState("");
+       const [isLoggedIn, setIsLoggedIn] = useState(false);
 
        const Login = async () => {
-          const res = await axios.post('http://localhost:5000/sign-in', { username, email, password }, { withCredentials: true  });
-          
+        try {
+             const res = await axios.post('http://localhost:5000/sign-in', { username, email, password }, { withCredentials: true  });
+             setIsLoggedIn(true);
+             setUsername("");
+             setPassword("");
+             setEmail("");
+        }
+       
        }
 }
