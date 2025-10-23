@@ -6,6 +6,7 @@ function SignUp() {
        const [username, setUsername] = useState("");
        const [email, setEmail] = useState("");
        const [password, setPassword] = useState("");
+       const [success, setSuccess] = useState("");
        const [error, setError] = useState("");
        const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -16,6 +17,7 @@ function SignUp() {
              setUsername("");
              setPassword("");
              setEmail("");
+             setSuccess("Logged In successfully");
         }
        
        }
