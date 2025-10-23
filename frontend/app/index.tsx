@@ -2,14 +2,12 @@ import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import AddTask from '@/components/AddTask';
 import { Container } from '@/components/Container';
 import SignIn from '@/components/SignIn';
 import { ScreenContent } from '@/components/ScreenContent';
 import Dashboard from '@/components/Dashboard';
 import SignUp from '@/components/SignUp';
-const navigation = useNavigation(); 
 
 const Tab = createBottomTabNavigator();
 
@@ -19,8 +17,8 @@ export default function Home() {
   useEffect(() => {
     const checkLogin = async () => {
       try {
-        await axios.get('http://localhost:5000/loggedIn', { withCredentials: true });
-        setLoggedIn(true);
+        const res = await axios.get('http://localhost:5000/loggedIn', { withCredentials: true });
+        setLoggedIn(res.data.loggedIn);
       } catch (err) {
         setLoggedIn(false);
       }
@@ -44,7 +42,7 @@ export default function Home() {
               <Tab.Screen name="Settings" component={Dashboard} />
             </Tab.Navigator>
           ) : (
-                <SignUp navigation={navigation} />        
+                <SignUp />        
           )}
         </ScreenContent>
       </Container>
