@@ -10,7 +10,7 @@ function SignUp() {
        const [error, setError] = useState("");
        const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-       const Login = async () => {
+       const Login = async ({ navigation }) => {
         try {
              const res = await axios.post('http://localhost:5000/sign-up', { username, email, password }, { withCredentials: true  });
              setIsLoggedIn(true);
@@ -64,7 +64,10 @@ function SignUp() {
                    <View className="mt-4">
                     <TouchableOpacity 
                       className="bg-green-200 p-4 rounded-lg active:bg-green-400"
-                      onPress={Login}
+                      onPress={() => {
+                        Login,
+                        navigator.navigate("Dashboard")
+                      }}
                     >
                         <View>
                             <Text className="text-center font-bold">Sign Up</Text>
