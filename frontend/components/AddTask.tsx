@@ -62,20 +62,22 @@ export default  function AddTask() {
             </View>
 
             <View className="mt-4">
-               <Text>Finishing Date</Text>
+               <Text className="text-lg text-gray-700">Finishing Date</Text>
                <TextInput 
+                 className="bg-gray-700 rounded-xl p-3 placeholder:text-white"
                  placeholder="YYYY-MM-DD"
                  onChangeText={setDue_date}
                />
             </View>
 
-
-         {loading ? (
-            <ActivityIndicator 
-              size="large" color="blue" 
-            />
-         ) : (
+         <View className="mt-4">
+          {loading ? (
+              <ActivityIndicator 
+                size="large" color="blue" 
+              />
+           ) : (
           <TouchableOpacity
+             className="bg-gradient-to-tl from-blue-400 to-green-500 via-purple-700 p-3 rounded-lg"
               onPress={AddTask}
           >
             <View>
@@ -84,6 +86,8 @@ export default  function AddTask() {
 
           </TouchableOpacity>
          )}
+         </View>
+ 
 
 
           {error && (
