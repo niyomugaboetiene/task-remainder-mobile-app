@@ -32,4 +32,9 @@ route.post('/add', (req, res) => {
   });
 });
 
+// * select all task in the database
+route.get('/all', (req, res) => {
+  
+})
+
 export default route;
