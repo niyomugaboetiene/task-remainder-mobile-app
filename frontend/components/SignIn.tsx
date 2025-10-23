@@ -27,7 +27,22 @@ import axios from "axios";
     <View>
         <Text>Create Account</Text>
         <View>
-
+           <Text>Full Name</Text>
+           <TextInput 
+              placeholder="Enter your full name"
+              onChangeText={setFull_name}
+           />
+        </View>
+        <View>      
+           <Text>Username</Text>
+           <TextInput 
+               placeholder="Enter your user name"
+               onChangeText={setUsername}
+            />
+        </View>
+        <View>
+                    <Text>Full Name</Text>
+           <Text>Full Name</Text>
         </View>
     </View>
    )
