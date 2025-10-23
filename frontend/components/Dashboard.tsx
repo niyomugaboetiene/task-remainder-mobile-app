@@ -24,6 +24,9 @@ function Dashboard(){
        UserInfo();
     }, [])
   
+    const getGreeting = () => {
+        const hour = new Date().getHours();
+    }
 
     return (
         <View>
