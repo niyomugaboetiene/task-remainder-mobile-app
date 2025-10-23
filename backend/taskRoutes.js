@@ -34,7 +34,8 @@ route.get('/sign-up', async (req, res) => {
          if (result.length > 0) {
            const hashedPassword = result[0].password;
            if (bcrypt.compareSync(password, hashedPassword)) {
-            req.session.user_id = result[0].user_id
+            req.session.user_id = result[0].user_id,
+            req.session.username = result[0].username
            }
          }
    })
