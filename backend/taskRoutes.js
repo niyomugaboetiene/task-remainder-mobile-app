@@ -4,9 +4,9 @@ import connection from "./conn.js";
 const route = express.Router();
 
 route.post('/sign-in', (req, res) => {
-   const { username, email, password } = req.body;
+   const { full_name, username, email, password } = req.body;
    const sql = "INSERT INTO users(username, email, password) VALUES(?, ?, ?)";
-   connection.query(sql, [username, email, password], (err) => {
+   connection.query(sql, [full_name, username, email, password], (err) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     } else {
