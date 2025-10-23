@@ -41,8 +41,26 @@ import axios from "axios";
             />
         </View>
         <View>
-                    <Text>Full Name</Text>
-           <Text>Full Name</Text>
+           <Text>Email</Text>
+           <TextInput 
+              placeholder="Enter your email"
+              onChangeText={setEmail}
+            />
+        </View>
+        <View>
+           <Text>Password</Text>
+           <TextInput 
+              placeholder="Enter your password" 
+              onChangeText={setPassword}
+            />
+
+            <TouchableOpacity 
+              onPress={CreateAccount}
+            >
+                <View>
+                    <Text>Create Account</Text>
+                </View>
+            </TouchableOpacity>
         </View>
     </View>
    )
