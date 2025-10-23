@@ -35,7 +35,7 @@ function SignUp({ navigation }) {
 
        return (
          <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-5">
-                <Text className="text-xl text-center text-black font-bold">Sign In</Text>
+                <Text className="text-xl text-center text-black font-bold">Sign Up</Text>
     
                 <View className="mt-4">      
                    <Text className="text-lg text-gray-700">Username</Text>
@@ -72,6 +72,13 @@ function SignUp({ navigation }) {
                         <View>
                             <Text className="text-center font-bold">Sign Up</Text>
                         </View>
+                    </TouchableOpacity>
+                   </View>
+                   <View className="mt-4">
+                 <Text className="text-lg text-gray-700">Dont you have account ?</Text>
+                    <TouchableOpacity className="mt-2"
+                    >
+                        <Text className="text-blue-700 underline text-lg">Sign-up</Text>
                     </TouchableOpacity>
                    </View>
                 
