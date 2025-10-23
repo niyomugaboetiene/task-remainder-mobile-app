@@ -12,15 +12,16 @@ import axios from "axios";
 
    const CreateAccount = async () => {
     try {
-      if (!username || !password || !full_name || !email) {
+      if (!username && !password && !full_name && !email) {
           const res = await axios.post('http://localhost:5000/sign-in', {full_name, username, email, password}, { withCredentials: true });
           setSuccess(res.data.message);
           setFull_name("");
           setEmail("");
           setPassword("");
           setUsername("");
+      } else {
+         setError("Fill out all fields");
       }
- 
     } catch (error) {
         setError("Unable to create Account");
     }
