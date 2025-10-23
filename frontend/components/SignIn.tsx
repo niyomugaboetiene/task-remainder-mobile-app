@@ -12,12 +12,15 @@ import axios from "axios";
 
    const CreateAccount = async () => {
     try {
-       const res = await axios.post('http://localhost:5000/sign-in', {full_name, username, email, password}, { withCredentials: true });
-       setSuccess(res.data.message);
-       setFull_name("");
-       setEmail("");
-       setPassword("");
-       setUsername("");
+      if (!username || !password || !full_name || !email) {
+          const res = await axios.post('http://localhost:5000/sign-in', {full_name, username, email, password}, { withCredentials: true });
+          setSuccess(res.data.message);
+          setFull_name("");
+          setEmail("");
+          setPassword("");
+          setUsername("");
+      }
+ 
     } catch (error) {
         setError("Unable to create Account");
     }
@@ -57,16 +60,19 @@ import axios from "axios";
               placeholder="Enter your password" 
               onChangeText={setPassword}
             />
+          </View>
 
-   
+           <View className="mt-4">
             <TouchableOpacity 
+              className="bg-green-200 p-4 rounded-lg"
               onPress={CreateAccount}
             >
                 <View>
                     <Text>Create Account</Text>
                 </View>
             </TouchableOpacity>
-        </View>
+           </View>
+
 
         {success && (
          <Text>{success}</Text>
