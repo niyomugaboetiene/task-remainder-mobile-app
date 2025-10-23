@@ -6,7 +6,15 @@ const route = express.Router();
 route.post('/sign-in', (req, res) => {
    const { username, email, password } = req.body;
    const sql = "INSERT INTO users(username, email, password) VALUES(?, ?, ?)";
-})
+   connection.query(sql, [username, email, password], (err) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    } else {
+      return res.status(201).json("Created successfully");
+    }
+   });
+});
+
 route.post('/add', (req, res) => {
   const { title, description, due_date, status } = req.body;
 
