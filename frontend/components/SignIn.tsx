@@ -9,6 +9,10 @@ import axios from "axios";
    const [password, setPassword] = useState("");
 
    const CreateAccount = async () => {
-    const res = await axios.post('http://localhost:5000/sign-in', ())
+    const res = await axios.post('http://localhost:5000/sign-in', {
+        full_name, username, email, password,{
+            withCredentials: true
+        }
+    })
    }
 }
