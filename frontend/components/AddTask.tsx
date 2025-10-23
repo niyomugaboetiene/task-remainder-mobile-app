@@ -44,7 +44,7 @@ export default  function AddTask() {
          <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-4 rounded-xl">
                <Text className="text-xl text-center text-white font-bold">Add Task</Text>
                <View className="mt-4">
-                <Text className="text-lg">Title</Text>
+                <Text className="text-lg text-gray-700">Title</Text>
                 <TextInput 
                   className="bg-gray-700 p-3 rounded-xl placeholder:text-white" 
                   placeholder="Enter title"
@@ -53,9 +53,10 @@ export default  function AddTask() {
              </View>
 
             <View className="mt-4">
-              <Text>Description</Text>
-              <TextInput 
-                placeholder="Enter Deskription"
+              <Text className="text-lg text-gray-700">Description</Text>
+              <TextInput
+                className="bg-gray-700 p-3 rounded-xl placeholder:text-white" 
+                placeholder="Enter Description"
                 onChangeText={setDescription}
               />
             </View>
