@@ -30,7 +30,7 @@ import axios from "axios";
 
    return (
     <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-5">
-        <Text className="text-xl text-center text-white font-bold">Create Account</Text>
+        <Text className="text-xl text-center text-black font-bold">Create Account</Text>
         <View className="mt-4">
            <Text className="text-lg text-gray-700">Full Name</Text>
            <TextInput 
