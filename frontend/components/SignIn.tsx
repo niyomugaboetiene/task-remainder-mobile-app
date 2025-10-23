@@ -29,7 +29,7 @@ import axios from "axios";
         <View className="mt-4">
            <Text className="text-lg text-gray-700">Full Name</Text>
            <TextInput 
-               className="bg-gray-700 rounded-lg p-3"
+               className="bg-gray-700 rounded-lg p-3 placeholder:text-white text-white"
               placeholder="Enter your full name"
               onChangeText={setFull_name}
            />
