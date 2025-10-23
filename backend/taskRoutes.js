@@ -6,6 +6,7 @@ const route = express.Router();
 
 route.post('/sign-in', (req, res) => {
    const { full_name, username, email, password } = req.body;
+   const hasedPassword = bcrypt.genSalt(password, 10);
    const sql = "INSERT INTO users(full_name, username, email, password) VALUES(?, ?, ?, ?)";
    connection.query(sql, [full_name, username, email, password], (err) => {
     if (err) {
