@@ -1,6 +1,7 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import connection from "./conn.js";
+import { use } from "react";
 
 const route = express.Router();
 
@@ -26,9 +27,14 @@ route.post('/sign-up', async (req, res) => {
     if (err) {
       return res.status(500).json({ error: err.message})
     }
+    if (result > 0) {
+         const sql = "SELECT * FROM users WHERE username = ? AND email = ? ";
+         connection.query(sql, [username, email], (err, result) => {
+          
+         })
+    }
    })
-   const sql = "SELECT * FROM users WHERE username = ? AND email = ? ";
-   connection.query(sql, [username, email, password], (err, result) => {
+   connection.query(sql, [username, email], (err, result) => {
          if (err) {
            return res.status(500).json({ error: err.message });
          } 
