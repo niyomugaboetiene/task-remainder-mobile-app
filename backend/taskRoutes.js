@@ -1,13 +1,13 @@
 import express from "express";
-import bcrypt from "bcrypt";
+import bcrypt, { hash } from "bcrypt";
 import connection from "./conn.js";
 
 const route = express.Router();
 
-route.post('/sign-in', (req, res) => {
+route.post('/sign-in', async (req, res) => {
    const { full_name, username, email, password } = req.body;
-   const salt = bcrypt.genSalt(password, 10);
-   const hashedPassword = bcrypt.hash(salt);
+   const salt = await bcrypt.genSalt(10);
+   const hashedPassword = await bcrypt.hash(password, salt);
    const sql = "INSERT INTO users(full_name, username, email, password) VALUES(?, ?, ?, ?)";
    connection.query(sql, [full_name, username, email, hashedPassword], (err) => {
     if (err) {
