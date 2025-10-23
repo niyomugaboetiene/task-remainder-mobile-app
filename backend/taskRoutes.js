@@ -1,11 +1,12 @@
 import express from "express";
+import bcrypt from "bcrypt";
 import connection from "./conn.js";
 
 const route = express.Router();
 
 route.post('/sign-in', (req, res) => {
    const { full_name, username, email, password } = req.body;
-   const sql = "INSERT INTO users(full_name, username, email, password) VALUES(?, ?, ?)";
+   const sql = "INSERT INTO users(full_name, username, email, password) VALUES(?, ?, ?, ?)";
    connection.query(sql, [full_name, username, email, password], (err) => {
     if (err) {
       return res.status(500).json({ error: err.message });
