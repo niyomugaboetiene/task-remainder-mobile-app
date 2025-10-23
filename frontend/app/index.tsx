@@ -46,6 +46,9 @@ export default function Home() {
             <Tab.Navigator
               screenOptions={{
                 headerShown: false,
+                tabBarStyle: {
+                  backgroundColor: ''
+                }
               }}
             >
               <Tab.Screen name="Sign-Up" component={SignIn} options={{
