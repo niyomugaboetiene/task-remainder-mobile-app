@@ -6,6 +6,7 @@ import AddTask from '@/components/AddTask';
 import { Container } from '@/components/Container';
 import SignIn from '@/components/SignIn';
 import { ScreenContent } from '@/components/ScreenContent';
+import SignUp from '@/components/SignUp';
 
 
 
@@ -16,7 +17,8 @@ export default function Home() {
          <Container>
             <ScreenContent>
                  {/* <AddTask /> */}
-                 <SignIn />
+                 {/* <SignIn /> */}
+                 <SignUp />
             </ScreenContent>
          </Container>
     </View>

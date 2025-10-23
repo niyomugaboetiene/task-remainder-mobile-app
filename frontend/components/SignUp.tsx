@@ -59,7 +59,7 @@ function SignUp() {
                       onPress={Login}
                     >
                         <View>
-                            <Text className="text-center font-bold">Create Account</Text>
+                            <Text className="text-center font-bold">Sign Up</Text>
                         </View>
                     </TouchableOpacity>
                    </View>
@@ -78,3 +78,5 @@ function SignUp() {
             </View>
        )
 }
+
+export default SignUp
