@@ -26,11 +26,13 @@ function Dashboard(){
   
     const getGreeting = () => {
         const hour = new Date().getHours();
+        if (hour < 12) return "Good Moring";
+        if (hour < 18) return "Good Afternoon";
     }
 
     return (
         <View>
-            <Text>Welcome: {userInfo}</Text>
+            <Text>{getGreeting()} {userInfo}</Text>
         </View>
     )
 }
