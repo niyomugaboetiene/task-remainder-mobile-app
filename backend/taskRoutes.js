@@ -1,15 +1,9 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import session from "express-session";
 import connection from "./conn.js";
 
 const route = express.Router();
-route.use(session({
-  secret: 'hello',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false, maxAge: 1000 * 60 * 60 } // only one hr
-}));
+
 
 route.post('/sign-in', async (req, res) => {
    const { full_name, username, email, password } = req.body;
