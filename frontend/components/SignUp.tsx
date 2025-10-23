@@ -18,9 +18,15 @@ function SignUp() {
              setPassword("");
              setEmail("");
              setSuccess(`Logged In successfully ${res.data.name}`);
+             setTimeout(() => {
+                setSuccess("")
+             }, 5000);
         } catch (err) {
              setError("Unable to login try again later");
             setIsLoggedIn(false);
+            setTimeout(() => {
+                setError("")
+            }, 2000);
         }
        }
 
