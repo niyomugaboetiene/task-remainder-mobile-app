@@ -28,8 +28,10 @@ export default function Home() {
              <Container>
                 <ScreenContent>
                   {loggin ? (
-                    <Tab.Navigator initialRouteName='Home'>
-                        <Tab.Screen />
+                    <Tab.Navigator initialRouteName='Sign-in'>
+                        <Tab.Screen name='Home' component={Dashboard}/>
+                        <Tab.Screen name='Sign-in' component={SignIn}/>
+                        <Tab.Screen name='Sign-up' component={SignUp}/>
                     </Tab.Navigator>
                   )}
                 </ScreenContent>
