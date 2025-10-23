@@ -60,12 +60,15 @@ export default  function AddTask() {
                 onChangeText={setDescription}
               />
             </View>
- 
-           <Text>Finishing Date</Text>
-            <TextInput 
-               placeholder="YYYY-MM-DD"
-               onChangeText={setDue_date}
-            />
+
+            <View className="mt-4">
+               <Text>Finishing Date</Text>
+               <TextInput 
+                 placeholder="YYYY-MM-DD"
+                 onChangeText={setDue_date}
+               />
+            </View>
+
 
          {loading ? (
             <ActivityIndicator 
