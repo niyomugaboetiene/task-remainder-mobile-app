@@ -26,7 +26,7 @@ route.post('/sign-in', async (req, res) => {
 
 route.get('/sign-up', async (req, res) => {
    const { username, email, password } = req.body;
-   const sql = "SELECT * FROM users WHERE username = ?, password = ?, email = ?";
+   const sql = "SELECT * FROM users WHERE username = ? AND password = ? AND email = ?";
    connection.query(sql, [username, email, password], (err, result) => {
          if (err) {
            return res.status(500).json({ error: err.message });
@@ -37,6 +37,8 @@ route.get('/sign-up', async (req, res) => {
             req.session.user_id = result[0].user_id,
             req.session.username = result[0].username
             return res.status(200).json("Login successfully", {name: req.secure.username})
+           } else {
+            return res.status(401).json("Incorrect password")
            }
          }
    })
