@@ -10,12 +10,10 @@ function SignUp() {
        const [success, setSuccess] = useState("");
        const [error, setError] = useState("");
        const navigation = useNavigation();
-       const [isLoggedIn, setIsLoggedIn] = useState(false);
 
        const Login = async () => {
         try {
              const res = await axios.post('http://localhost:5000/sign-up', { username, email, password }, { withCredentials: true  });
-             setIsLoggedIn(true);
              setUsername("");
              setPassword("");
              setEmail("");
@@ -28,7 +26,6 @@ function SignUp() {
         } catch (err: any) {
             const errorMessage = err.response?.data?.error;
             setError(errorMessage);
-            setIsLoggedIn(false);
             setTimeout(() => {
                 setError("")
             }, 3000);
