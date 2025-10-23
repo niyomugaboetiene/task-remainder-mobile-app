@@ -9,11 +9,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Dashboard from '@/components/Dashboard';
 import SignUp from '@/components/SignUp';
 import axios from 'axios';
+import { useState } from 'react';
 
 const Tab = createBottomTabNavigator();
 export default function Home() {  
+  const [loggin, setLoggin] = useState(false);
    const checkLogin = async() => {
-     const res = await axios.get('http://localhost:5000/loggedIn', { withCredentials: true })
+     const res = await axios.get('http://localhost:5000/loggedIn', { withCredentials: true });
+     setLoggin(true);
    }
   return (
          <View className='flex-1'>
