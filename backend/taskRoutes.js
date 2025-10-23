@@ -14,7 +14,7 @@ route.post('/sign-in', async (req, res) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     } else {
-      return res.status(201).json("Created successfully");
+      return res.status(201).json({ message: "Created Successfully" });
     }
    });
 });

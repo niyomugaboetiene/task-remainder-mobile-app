@@ -7,13 +7,10 @@ import axios from "axios";
    const [username, setUsername] = useState("");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
+   const [success, setSuccess] = useState("");
 
    const CreateAccount = async () => {
-    const res = await axios.post('http://localhost:5000/sign-in', {
-        full_name, username, email, 
-        {
-            withCredentials: true
-        }
-    })
+    const res = await axios.post('http://localhost:5000/sign-in', {full_name, username, email, }, { withCredentials: true });
+    setSuccess(res.data.)
    }
 }
