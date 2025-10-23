@@ -8,6 +8,7 @@ import SignIn from '@/components/SignIn';
 import { ScreenContent } from '@/components/ScreenContent';
 import Dashboard from '@/components/Dashboard';
 import SignUp from '@/components/SignUp';
+import { MaterialIcons } from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
@@ -47,8 +48,12 @@ export default function Home() {
                 headerShown: false,
               }}
             >
-              <Tab.Screen name="Sign-in" component={SignIn} />
-              <Tab.Screen name="Sign-Up" component={SignUp} />
+              <Tab.Screen name="Sign-in" component={SignIn} options={{
+                tabBarIcon: ({ color, size }) => <MaterialIcons name='login' size={size} color={color}/>
+              }}/>
+              <Tab.Screen name="Sign-Up" component={SignUp} options={{
+                tabBarIcon: ({ color, size }) => 
+              }}/>
             </Tab.Navigator>        
             )}
         </ScreenContent>
