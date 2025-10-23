@@ -27,6 +27,7 @@ function Dashboard(){
 
     return (
         <View>
+            <Text>{userInfo}</Text>
         </View>
     )
 }
