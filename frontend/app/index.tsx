@@ -46,15 +46,15 @@ export default function Home() {
             <Tab.Navigator
               screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: 'white',
+                tabBarActiveTintColor: 'black',
                 tabBarInactiveTintColor: 'white',
                 tabBarStyle: {
                   backgroundColor: 'green'
                 }
               }}
             >
-              <Tab.Screen name="Sign-Up" component={SignIn} options={{
-                tabBarIcon: ({ color, size }) =>  <MaterialIcons name='person-add' size={size} color={color}/>
+              <Tab.Screen name="Sign-Up" component={SignIn}  options={{
+                tabBarIcon: ({ color, size }) =>  <MaterialIcons name='person-add' size={size} color={color} />
               }}
               />
               <Tab.Screen name="Sign-In" component={SignUp} options={{
