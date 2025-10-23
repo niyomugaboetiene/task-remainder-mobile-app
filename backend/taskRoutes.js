@@ -38,7 +38,7 @@ route.post('/sign-up', async (req, res) => {
               name: req.session.username
             })
            } else {
-            return res.status(401).json("Incorrect password")
+            return res.status(401).json({error: "Incorrect password"})
            }
    })
 })

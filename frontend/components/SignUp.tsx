@@ -21,8 +21,8 @@ function SignUp() {
              setTimeout(() => {
                 setSuccess("")
              }, 5000);
-        } catch (err) {
-             setError("Unable to login try again later");
+        } catch (err: any) {
+             setError(err.data.message);
             setIsLoggedIn(false);
             setTimeout(() => {
                 setError("")
