@@ -21,7 +21,8 @@ function SignUp({ navigation }) {
              setTimeout(() => {
                 setSuccess("")
              }, 5000);
-             setError("")
+             setError("");
+             navigation.navigate("Home");
         } catch (err: any) {
             const errorMessage = err.response?.data?.error;
             setError(errorMessage);
@@ -66,7 +67,6 @@ function SignUp({ navigation }) {
                       className="bg-green-200 p-4 rounded-lg active:bg-green-400"
                       onPress={async() => {
                         await Login();
-                            navigation.navigate("Dashboard")
                       }}
                     >
                         <View>
