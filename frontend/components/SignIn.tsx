@@ -65,3 +65,5 @@ import axios from "axios";
     </View>
    )
 }
+
+export default SignIn;
