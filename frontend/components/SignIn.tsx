@@ -70,7 +70,7 @@ import axios from "axios";
               onPress={CreateAccount}
             >
                 <View>
-                    <Text className="text-center font-bold">Create Account</Text>
+                    <Text className="text-center font-bold">Sign Up</Text>
                 </View>
             </TouchableOpacity>
            </View>
