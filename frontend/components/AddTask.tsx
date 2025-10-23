@@ -87,12 +87,13 @@ export default  function AddTask() {
           </TouchableOpacity>
          )}
          </View>
- 
 
-
+         <View className="mt-4">
           {error && (
-            <Text>{error}</Text>
+            <Text className="text-red-500 text-lg">{error}</Text>
           )}
+        </View>
+
          </View>
     )
 }
