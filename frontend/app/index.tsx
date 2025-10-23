@@ -49,10 +49,10 @@ export default function Home() {
               }}
             >
               <Tab.Screen name="Sign-in" component={SignIn} options={{
-                tabBarIcon: ({ color, size }) => <MaterialIcons name='login' size={size} color={color}/>
+                tabBarIcon: ({ color, size }) =>  <MaterialIcons name='person-add' size={size} color={color}/>
               }}/>
               <Tab.Screen name="Sign-Up" component={SignUp} options={{
-                tabBarIcon: ({ color, size }) => 
+                tabBarIcon: ({ color, size }) => <MaterialIcons name='login' size={size} color={color}/>
               }}/>
             </Tab.Navigator>        
             )}
