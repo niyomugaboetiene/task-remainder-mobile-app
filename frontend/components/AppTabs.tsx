@@ -1,7 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Dashboard from '@/components/Dashboard';
 import SignUp from '@/components/SignUp';
-
+import SignIn from './SignIn';
+import AddTask from './AddTask';
 const Tab = createBottomTabNavigator();
 function Tabs() {
     return (
