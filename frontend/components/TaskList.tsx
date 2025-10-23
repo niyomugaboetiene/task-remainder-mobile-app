@@ -16,8 +16,15 @@ export default function AllTask() {
            setLoading(false);
         } catch (error) {
              setError("Unable to fetch list in the database");
+             setLoading(false);
+        } finally {
+            setLoading(false);
         }
-        
       }
-   })
+
+      ListOfTask();
+   });
+
+
+
 }
