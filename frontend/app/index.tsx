@@ -18,16 +18,7 @@ export default function Home() {
       <View className='flex-1'>
          <Container>
             <ScreenContent>
-              <Tab.Navigator initialRouteName='Sign-up'
-                 screenOptions={{
-                  headerShown: false
-                 }}
-               >
-                    <Tab.Screen name="Home" component={Dashboard} />
-                    <Tab.Screen name="Sign-in" component={SignIn} />
-                    <Tab.Screen name="Sign-up" component={SignUp} />
-                    <Tab.Screen name="Add-Task" component={AddTask} />
-              </Tab.Navigator>
+
             </ScreenContent>
          </Container>
     </View>
