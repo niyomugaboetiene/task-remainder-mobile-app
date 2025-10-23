@@ -1,4 +1,4 @@
-import { View, Text } from "react-native"
+import { View, Text, TouchableOpacity, TextInput } from "react-native"
 import { useState } from "react"
 import axios from "axios";
 
@@ -21,6 +21,14 @@ import axios from "axios";
     } catch (error) {
         setEmail("Unable to create Account");
     }
-
    }
+
+   return (
+    <View>
+        <Text>Create Account</Text>
+        <View>
+
+        </View>
+    </View>
+   )
 }
