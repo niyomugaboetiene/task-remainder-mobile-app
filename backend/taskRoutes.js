@@ -29,17 +29,17 @@ route.post('/sign-up', async (req, res) => {
          if (result.length === 0) {
           return res.status(404).json("User not fund")
          }
-         if (result.length > 0) {
            const hashedPassword = result[0].password;
-
            if (bcrypt.compareSync(password, hashedPassword)) {
             req.session.user_id = result[0].user_id,
             req.session.username = result[0].username
-            return res.status(200).json("Login successfully", {name: req.secure.username})
+            return res.status(200).json({
+              message: 'Login successfully',
+              name: req.session.username
+            })
            } else {
             return res.status(401).json("Incorrect password")
            }
-         }
    })
 })
 route.post('/add', (req, res) => {
