@@ -18,13 +18,20 @@ route.post('/sign-in', async (req, res) => {
    });
 });
 
-route.get('/sign-in', async (req, res) => {
+route.get('/sign-up', async (req, res) => {
    const { username, email, password } = req.body;
    const sql = "SELECT * FROM users WHERE username = ?, password = ?, email = ?";
-   const comparedPassword = bcrypt.compare(password)
-   if (!username || !email || !password) {
-    connection.query(sql, [])
-   }
+   connection.query(sql, [username, email, password], (err, result) => {
+         if (err) {
+           return res.status(500).json({ error: err.message });
+         } 
+         if (result.length > 0) {
+           const hashedPassword = result[0].password;
+           if (bcrypt.compareSync(password, hashedPassword)) {
+            req.
+           }
+         }
+   })
 })
 route.post('/add', (req, res) => {
   const { title, description, due_date, status } = req.body;
