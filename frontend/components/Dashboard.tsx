@@ -12,7 +12,7 @@ function Dashboard(){
         try {
             setLoading(true)
             const res = await axios.get('http://localhost:5000/loggedIn', {withCredentials: true});
-            setUserInfo(res.data.loggedIn);
+            setUserInfo(res.data.name);
             setLoading(true);
         } catch (err: any) {
             setError(err?.response?.data);
@@ -20,14 +20,14 @@ function Dashboard(){
         } finally {
             setLoading(false);
         }
-
        }
-    })
+       UserInfo();
+    }, [])
   
 
     return (
         <View>
-            <Text>{userInfo}</Text>
+            <Text>Welcome: {userInfo}</Text>
         </View>
     )
 }
