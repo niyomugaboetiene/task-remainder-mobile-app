@@ -21,13 +21,17 @@ route.post('/sign-in', async (req, res) => {
 
 route.post('/sign-up', async (req, res) => {
    const { username, email, password } = req.body;
-   const sql = "SELECT * FROM users WHERE username = ? AND email = ?";
+   const sql = "SELECT * FROM users WHERE username = ? OR email = ?";
    connection.query(sql, [username, email], (err, result) => {
          if (err) {
            return res.status(500).json({ error: err.message });
          } 
+         if (result.length === 0) {
+          return res.status(404).json("User not fund")
+         }
          if (result.length > 0) {
            const hashedPassword = result[0].password;
+
            if (bcrypt.compareSync(password, hashedPassword)) {
             req.session.user_id = result[0].user_id,
             req.session.username = result[0].username
