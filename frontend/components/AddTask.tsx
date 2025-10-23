@@ -77,7 +77,7 @@ export default  function AddTask() {
               />
            ) : (
           <TouchableOpacity
-             className="bg-gradient-to-tl from-blue-400 to-green-500 via-purple-700 p-3 rounded-lg"
+             className="bg-gradient-to-tl from-blue-400 to-green-500 via-purple-700 p-3 rounded-lg active:bg-gradient-to-t active:to-purple-500 active:from-green-400 active:via-blue-500"
               onPress={AddTask}
           >
             <View>
