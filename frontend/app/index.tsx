@@ -49,7 +49,9 @@ export default function Home() {
                 tabBarActiveTintColor: 'black',
                 tabBarInactiveTintColor: 'white',
                 tabBarStyle: {
-                  backgroundColor: 'green'
+                  borderTopLeftRadius: 10,
+                  borderTopRightRadius: 10,
+                  backgroundColor: '#10B981'
                 }
               }}
             >
