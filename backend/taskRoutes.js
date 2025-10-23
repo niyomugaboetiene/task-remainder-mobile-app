@@ -4,6 +4,11 @@ import session from "express-session";
 import connection from "./conn.js";
 
 const route = express.Router();
+route.use(session({
+  secret: 'hello',
+  saveUninitialized: true,
+  cookie: false
+}));
 
 route.post('/sign-in', async (req, res) => {
    const { full_name, username, email, password } = req.body;
