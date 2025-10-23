@@ -44,8 +44,8 @@ route.post('/sign-up', async (req, res) => {
 })
 
 route.get('/loggedIn', (req, res) => {
-  if (req.session.username) {
-    return res.status(200).json({ data: req.session.username });
+  if (req.session.user_id) {
+    return res.status(200).json({ user: req.session.username });
   } else {
     return res.status(401).json({error: 'Not logged in'})
   }
