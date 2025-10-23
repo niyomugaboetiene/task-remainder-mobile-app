@@ -6,9 +6,10 @@ const route = express.Router();
 
 route.post('/sign-in', (req, res) => {
    const { full_name, username, email, password } = req.body;
-   const hasedPassword = bcrypt.genSalt(password, 10);
+   const salt = bcrypt.genSalt(password, 10);
+   const hashedPassword = bcrypt.hash(salt);
    const sql = "INSERT INTO users(full_name, username, email, password) VALUES(?, ?, ?, ?)";
-   connection.query(sql, [full_name, username, email, password], (err) => {
+   connection.query(sql, [full_name, username, email, hashedPassword], (err) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     } else {
