@@ -47,8 +47,8 @@ export default function Home() {
                 headerShown: false,
               }}
             >
-              <Tab.Screen name="Sign-in" component={SignIn} />
-              <Tab.Screen name="Sign-Up" component={SignUp} />
+              <Tab.Screen name="Sign-in" component={SignIn} options={{ tabBarButton: () => null}}/>
+              <Tab.Screen name="Sign-Up" component={SignUp} options={{ tabBarButton: () => null }}/>
             </Tab.Navigator>        
             )}
         </ScreenContent>
