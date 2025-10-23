@@ -21,7 +21,7 @@ route.post('/sign-in', async (req, res) => {
 route.get('/sign-in', async (req, res) => {
    const { username, email, password } = req.body;
    const sql = "SELECT * FROM users WHERE username = ?, password = ?, email = ?";
-   const comparedPassword = bcrypt.compare(password, )
+   const comparedPassword = bcrypt.compare(password)
    if (!username || !email || !password) {
     connection.query(sql, [])
    }
