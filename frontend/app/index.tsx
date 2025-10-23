@@ -42,8 +42,15 @@ export default function Home() {
               <Tab.Screen name="Settings" component={Dashboard} />
             </Tab.Navigator>
           ) : (
-                <SignUp />        
-          )}
+            <Tab.Navigator
+              screenOptions={{
+                headerShown: false,
+              }}
+            >
+              <Tab.Screen name="Sign-in" component={SignIn} />
+              <Tab.Screen name="Sign-Up" component={SignUp} />
+            </Tab.Navigator>        
+            )}
         </ScreenContent>
       </Container>
     </View>
