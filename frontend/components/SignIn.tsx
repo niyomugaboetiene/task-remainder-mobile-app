@@ -74,11 +74,18 @@ import axios from "axios";
                 </View>
             </TouchableOpacity>
            </View>
+        
+         <View className="mt-4">
+            {success && (
+               <Text className="text-green-600 font-bold">{success}</Text>
+            )}
+         </View>  
+      <View className="mt-4">
+            {error && (
+               <Text className="text-lg text-red-500">{error}</Text>
+            )}
+         </View>
 
-
-        {success && (
-         <Text>{success}</Text>
-        )}
     </View>
    )
 }
