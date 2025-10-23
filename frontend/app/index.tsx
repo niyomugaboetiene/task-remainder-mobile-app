@@ -47,9 +47,9 @@ export default function Home() {
               screenOptions={{
                 headerShown: false,
                 tabBarActiveTintColor: 'white',
-                tabBarInactiveTintColor: '#e5e7eb',
+                tabBarInactiveTintColor: 'white',
                 tabBarStyle: {
-                  backgroundColor: ''
+                  backgroundColor: 'green'
                 }
               }}
             >
