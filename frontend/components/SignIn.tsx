@@ -29,21 +29,23 @@ import axios from "axios";
         <View className="mt-4">
            <Text className="text-lg text-gray-700">Full Name</Text>
            <TextInput 
-               className="bg-gray-700 rounded-lg p-3 placeholder:text-white text-white"
+               className="bg-gray-700 rounded-lg p-4 placeholder:text-white text-white"
               placeholder="Enter your full name"
               onChangeText={setFull_name}
            />
         </View>
-        <View>      
-           <Text>Username</Text>
+        <View className="mt-4">      
+           <Text className="text-lg text-gray-700">Username</Text>
            <TextInput 
+               className="bg-gray-700 rounded-lg placeholder:text-white text-white p-4"
                placeholder="Enter your user name"
                onChangeText={setUsername}
             />
         </View>
-        <View>
-           <Text>Email</Text>
+        <View className="mt-4">
+           <Text className="text-lg text-gray-700">Email</Text>
            <TextInput 
+              className="bg-gray-700 rounded-lg placeholder:text-white text-white p-4"
               placeholder="Enter your email"
               onChangeText={setEmail}
             />
