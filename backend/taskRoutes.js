@@ -35,15 +35,7 @@ route.post('/sign-up', async (req, res) => {
            } 
            if (results[0].email == result[0].message) {
             return res.status(401).json("Email must be unique");
-           }
-         })
-    }
-   })
-   connection.query(sql, [username, email], (err, result) => {
-         if (err) {
-           return res.status(500).json({ error: err.message });
-         } 
-         if (result.length > 0) {
+           } else {
            const hashedPassword = result[0].password;
            if (bcrypt.compareSync(password, hashedPassword)) {
             req.session.user_id = result[0].user_id,
@@ -52,7 +44,9 @@ route.post('/sign-up', async (req, res) => {
            } else {
             return res.status(401).json("Incorrect password")
            }
-         }
+           }
+         })
+    }
    })
 })
 route.post('/add', (req, res) => {
