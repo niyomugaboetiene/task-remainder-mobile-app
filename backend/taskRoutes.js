@@ -42,6 +42,12 @@ route.post('/sign-up', async (req, res) => {
            }
    })
 })
+
+route.get('/loggedIn', (req, res) => {
+  if (req.session.name) {
+    return res.json({ data: req.session.name });
+  }
+});
 route.post('/add', (req, res) => {
   const { title, description, due_date, status } = req.body;
 
