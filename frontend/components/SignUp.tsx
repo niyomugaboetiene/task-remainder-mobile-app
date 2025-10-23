@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, TextInput} from "react-native"
 import axios from "axios"
-import { useState } from "react";
+import { useState } from "react"; 
 
 function SignUp({ navigation }) {
        const [username, setUsername] = useState("");
