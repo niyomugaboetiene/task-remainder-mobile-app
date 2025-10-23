@@ -25,7 +25,7 @@ route.post('/sign-in', async (req, res) => {
    });
 });
 
-route.get('/sign-up', async (req, res) => {
+route.post('/sign-up', async (req, res) => {
    const { username, email, password } = req.body;
    const sql = "SELECT * FROM users WHERE username = ? AND password = ? AND email = ?";
    connection.query(sql, [username, email, password], (err, result) => {
