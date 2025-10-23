@@ -12,7 +12,7 @@ function SignUp() {
 
        const Login = async () => {
         try {
-             const res = await axios.post('http://localhost:5000/sign-in', { username, email, password }, { withCredentials: true  });
+             const res = await axios.post('http://localhost:5000/sign-up', { username, email, password }, { withCredentials: true  });
              setIsLoggedIn(true);
              setUsername("");
              setPassword("");
