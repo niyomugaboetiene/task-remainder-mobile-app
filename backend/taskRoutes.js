@@ -27,7 +27,7 @@ route.post('/sign-up', async (req, res) => {
            return res.status(500).json({ error: err.message });
          } 
          if (result.length === 0) {
-          return res.status(404).json("User not fund")
+          return res.status(404).json({error: "User not fund"})
          }
            const hashedPassword = result[0].password;
            if (bcrypt.compareSync(password, hashedPassword)) {

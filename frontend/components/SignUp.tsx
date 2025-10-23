@@ -21,8 +21,10 @@ function SignUp() {
              setTimeout(() => {
                 setSuccess("")
              }, 5000);
+             setError("")
         } catch (err: any) {
-             setError(err.data.message);
+            const errorMessage = err.response?.data?.error;
+            setError(errorMessage);
             setIsLoggedIn(false);
             setTimeout(() => {
                 setError("")
@@ -72,7 +74,7 @@ function SignUp() {
                 
                  <View className="mt-4">
                     {success && (
-                       <Text className="text-green-600 font-bold">{success}</Text>
+                       <Text className="text-green-600 font-bold text-lg">{success}</Text>
                     )}
                  </View>  
               <View className="mt-4">
