@@ -46,7 +46,7 @@ export default  function AddTask() {
                <View className="mt-4">
                 <Text className="text-lg text-gray-700">Title</Text>
                 <TextInput 
-                  className="bg-gray-700 p-3 rounded-xl placeholder:text-white" 
+                  className="bg-gray-700 p-3 rounded-xl placeholder:text-white text-white" 
                   placeholder="Enter title"
                   onChangeText={setTitle}
                  />
@@ -55,7 +55,7 @@ export default  function AddTask() {
             <View className="mt-4">
               <Text className="text-lg text-gray-700">Description</Text>
               <TextInput
-                className="bg-gray-700 p-3 rounded-xl placeholder:text-white" 
+                className="bg-gray-700 p-3 rounded-xl placeholder:text-white text-white" 
                 placeholder="Enter Description"
                 onChangeText={setDescription}
               />
@@ -64,7 +64,7 @@ export default  function AddTask() {
             <View className="mt-4">
                <Text className="text-lg text-gray-700">Finishing Date</Text>
                <TextInput 
-                 className="bg-gray-700 rounded-xl p-3 placeholder:text-white"
+                 className="bg-gray-700 rounded-xl p-3 placeholder:text-white text-white"
                  placeholder="YYYY-MM-DD"
                  onChangeText={setDue_date}
                />
