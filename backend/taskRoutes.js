@@ -20,7 +20,10 @@ route.post('/sign-in', async (req, res) => {
 
 route.get('/sign-in', async (req, res) => {
    const { username, email, password } = req.body;
-   const sql = "SELECT * FROM users WHERE username = ?, password = ?"
+   const sql = "SELECT * FROM users WHERE username = ?, password = ?, email = ?";
+   if (!username || !email || !password) {
+    connection.query()
+   }
 })
 route.post('/add', (req, res) => {
   const { title, description, due_date, status } = req.body;
