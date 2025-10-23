@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function AllTask() {
     const [tasks, setTasks] = useState({});
-    const [error, setError] = useState("")
+    const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
    useEffect(() => {
@@ -15,7 +15,7 @@ export default function AllTask() {
            setTasks(result);
            setLoading(false);
         } catch (error) {
-
+             setError("Unable to fetch list in the database");
         }
         
       }
