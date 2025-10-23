@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, TextInput} from "react-native"
 import axios from "axios"
 import { useState } from "react";
 
-function SignUp() {
+function SignUp({ navigation }) {
        const [username, setUsername] = useState("");
        const [email, setEmail] = useState("");
        const [password, setPassword] = useState("");
@@ -10,7 +10,7 @@ function SignUp() {
        const [error, setError] = useState("");
        const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-       const Login = async ({ navigation }) => {
+       const Login = async () => {
         try {
              const res = await axios.post('http://localhost:5000/sign-up', { username, email, password }, { withCredentials: true  });
              setIsLoggedIn(true);
@@ -64,9 +64,9 @@ function SignUp() {
                    <View className="mt-4">
                     <TouchableOpacity 
                       className="bg-green-200 p-4 rounded-lg active:bg-green-400"
-                      onPress={() => {
-                        Login,
-                        navigator.navigate("Dashboard")
+                      onPress={async() => {
+                        await Login();
+                        navigation.navigate("Dashboard")
                       }}
                     >
                         <View>
