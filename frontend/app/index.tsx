@@ -1,5 +1,5 @@
 import { Stack, Link } from 'expo-router';
-import { View } from 'react-native';
+import { Settings, View } from 'react-native';
 
 import AddTask from '@/components/AddTask';
 import { Container } from '@/components/Container';
@@ -30,9 +30,9 @@ export default function Home() {
                   {loggin ? (
                     <Tab.Navigator initialRouteName='Sign-in'>
                         <Tab.Screen name='Home' component={Dashboard}/>
-                        <Tab.Screen name='Home' component={Dashboard}/>
-                        <Tab.Screen name='Home' component={Dashboard}/>
-                        <Tab.Screen name='Home' component={Dashboard}/>
+                        <Tab.Screen name='Add-task' component={AddTask}/>
+                        <Tab.Screen name='Your-task' component={Dashboard}/>
+                        <Tab.Screen name='Settings' component={Dashboard}/>
                     </Tab.Navigator>
                   ) : (
                     <Tab.Navigator>
