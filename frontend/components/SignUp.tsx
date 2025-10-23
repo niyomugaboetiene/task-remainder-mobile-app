@@ -77,6 +77,7 @@ function SignUp({ navigation }) {
                    <View className="mt-4">
                  <Text className="text-lg text-gray-700">Dont you have account ?</Text>
                     <TouchableOpacity className="mt-2"
+                      onPress={() => navigation.navigate("Sign-in")}
                     >
                         <Text className="text-blue-700 underline text-lg">Sign-up</Text>
                     </TouchableOpacity>
