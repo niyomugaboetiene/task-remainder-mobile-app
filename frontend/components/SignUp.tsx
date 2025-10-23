@@ -1,4 +1,4 @@
-import { View, Text, } from "react-native"
+import { View, Text, TouchableOpacity, TextInput} from "react-native"
 import axios from "axios"
 import { useState } from "react";
 
@@ -22,6 +22,59 @@ function SignUp() {
              setError("Unable to login try again later");
             setIsLoggedIn(false);
         }
-       
        }
+
+       return (
+         <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-5">
+                <Text className="text-xl text-center text-black font-bold">Sign In</Text>
+    
+                <View className="mt-4">      
+                   <Text className="text-lg text-gray-700">Username</Text>
+                   <TextInput 
+                       className="bg-gray-700 rounded-lg placeholder:text-white text-white p-4"
+                       placeholder="Enter your user name"
+                       onChangeText={setUsername}
+                    />
+                </View>
+                <View className="mt-4">
+                   <Text className="text-lg text-gray-700">Email</Text>
+                   <TextInput 
+                      className="bg-gray-700 rounded-lg placeholder:text-white text-white p-4"
+                      placeholder="Enter your email"
+                      onChangeText={setEmail}
+                    />
+                </View>
+                <View className="mt-4">
+                   <Text className="text-gray-700 text-lg">Password</Text>
+                   <TextInput 
+                      className="rounded-lg bg-gray-700 placeholder:text-white text-white p-4"
+                      placeholder="Enter your password" 
+                      onChangeText={setPassword}
+                    />
+                  </View>
+        
+                   <View className="mt-4">
+                    <TouchableOpacity 
+                      className="bg-green-200 p-4 rounded-lg active:bg-green-400"
+                      onPress={CreateAccount}
+                    >
+                        <View>
+                            <Text className="text-center font-bold">Create Account</Text>
+                        </View>
+                    </TouchableOpacity>
+                   </View>
+                
+                 <View className="mt-4">
+                    {success && (
+                       <Text className="text-green-600 font-bold">{success}</Text>
+                    )}
+                 </View>  
+              <View className="mt-4">
+                    {error && (
+                       <Text className="text-lg text-red-500">{error}</Text>
+                    )}
+                 </View>
+        
+            </View>
+       )
 }
