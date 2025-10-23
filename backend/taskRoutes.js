@@ -37,7 +37,9 @@ route.get('/all', (req, res) => {
   const sql = "SELECT * FROM tasks";
   connection.query(sql, (err, result) => {
     if (err) {
-      return res.status(500).json({ error: err.message })
+      return res.status(500).json({ error: err.message });
+    } else {
+      return res.status(200).json({ result });
     }
   })
 })
