@@ -26,7 +26,7 @@ function SignUp() {
             setIsLoggedIn(false);
             setTimeout(() => {
                 setError("")
-            }, 2000);
+            }, 3000);
         }
        }
 
