@@ -24,11 +24,12 @@ import axios from "axios";
    }
 
    return (
-    <View>
-        <Text>Create Account</Text>
-        <View>
-           <Text>Full Name</Text>
+    <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-5">
+        <Text className="text-xl text-center text-white font-bold">Create Account</Text>
+        <View className="mt-4">
+           <Text className="text-lg text-gray-700">Full Name</Text>
            <TextInput 
+               className="bg-gray-700 rounded-lg p-3"
               placeholder="Enter your full name"
               onChangeText={setFull_name}
            />
