@@ -10,7 +10,8 @@ import axios from "axios";
 
    const CreateAccount = async () => {
     const res = await axios.post('http://localhost:5000/sign-in', {
-        full_name, username, email, password,{
+        full_name, username, email, 
+        {
             withCredentials: true
         }
     })
