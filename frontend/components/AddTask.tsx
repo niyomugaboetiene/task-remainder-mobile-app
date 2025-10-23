@@ -9,6 +9,7 @@ export default  function AddTask() {
     const [status, setStatus] = useState("pending");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
     async function AddTask() {
       if (!title || !description || !status || !due_date) {
@@ -32,6 +33,7 @@ export default  function AddTask() {
            setDescription("")
            setDue_date("")
            setStatus("pending")
+           setSuccess("Task added successfully");
         } catch (error) {
              setError("Unable to create task. try again later")
              console.log("ERROR", error)
@@ -91,6 +93,11 @@ export default  function AddTask() {
          <View className="mt-4">
           {error && (
             <Text className="text-red-500 text-lg">{error}</Text>
+          )}
+        </View>
+        <View className="mt-4">
+          {success && (
+            <Text className="text-green-500 text-lg">{success}</Text>
           )}
         </View>
 
