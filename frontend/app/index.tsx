@@ -32,12 +32,12 @@ export default function Home() {
       <Container>
         <ScreenContent>
           {loggedIn ? (
-            <Tab.Navigator
+            <Tab.Navigator initialRouteName='home'
               screenOptions={{
                 headerShown: false,
               }}
             >
-              <Tab.Screen name="Home" component={Dashboard} options={{ tabBarIcon: ({ color, size}) => <MaterialIcons name='home' size={size} color={color}/>}} />
+              <Tab.Screen name="home" component={Dashboard} options={{ tabBarIcon: ({ color, size}) => <MaterialIcons name='home' size={size} color={color}/>}} />
               <Tab.Screen name="Add-task" component={AddTask} options={{ tabBarIcon: ({ color, size}) => <MaterialIcons name='add-circle-outline' size={size} color={color}/>}} />
               <Tab.Screen name="Your-task" component={Dashboard} options={{ tabBarIcon: ({ color, size}) => <MaterialIcons name='assignment' size={size} color={color}/>}} />
               <Tab.Screen name="Settings" component={Dashboard} options={{ tabBarIcon: ({ color, size}) => <MaterialIcons name='settings' size={size} color={color}/>}}/>

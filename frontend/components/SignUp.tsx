@@ -21,8 +21,9 @@ function SignUp() {
              setTimeout(() => {
                 setSuccess("")
              }, 5000);
-             setError("");
-             navigation.navigate("Home" as never);
+           setError("");
+           navigation.getParent()?.navigate("home" as never);
+
         } catch (err: any) {
             const errorMessage = err.response?.data?.error;
             setError(errorMessage);
