@@ -18,7 +18,7 @@ export default function Home() {
       <View className='flex-1'>
          <Container>
             <ScreenContent>
-              <Tab.Navigator
+              <Tab.Navigator initialRouteName='Sign-up'
                  screenOptions={{
                   headerShown: false
                  }}
