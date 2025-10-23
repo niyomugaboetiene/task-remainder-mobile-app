@@ -81,7 +81,7 @@ export default  function AddTask() {
               onPress={AddTask}
           >
             <View>
-               <Text>Add Task</Text>
+               <Text className="text-center text-white font-bold">Add Task</Text>
             </View>
 
           </TouchableOpacity>
