@@ -41,7 +41,7 @@ export default  function AddTask() {
     }
  
     return (
-         <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-4">
+         <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-4 rounded-xl">
                <Text className="text-xl text-center text-white font-bold">Add Task</Text>
                <View className="mt-4">
                 <Text className="text-lg">Title</Text>
@@ -52,7 +52,7 @@ export default  function AddTask() {
                  />
              </View>
 
-            <View>
+            <View className="mt-4">
               <Text>Description</Text>
               <TextInput 
                 placeholder="Enter Deskription"
