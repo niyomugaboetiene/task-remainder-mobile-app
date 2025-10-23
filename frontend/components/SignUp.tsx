@@ -10,6 +10,10 @@ function SignUp() {
        const [error, setError] = useState("");
 
        const Login = async () => {
-          const res = await axios.post()
+          const res = await axios.post('http://localhost:5000/sign-in', {
+            username, email, password
+          }, {
+            withCredentials: true
+          })
        }
 }
