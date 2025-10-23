@@ -50,13 +50,15 @@ import axios from "axios";
               onChangeText={setEmail}
             />
         </View>
-        <View>
-           <Text>Password</Text>
+        <View className="mt-4">
+           <Text className="text-gray-700 text-lg">Password</Text>
            <TextInput 
+              className="rounded-lg bg-gray-700 placeholder:text-white text-white p-4"
               placeholder="Enter your password" 
               onChangeText={setPassword}
             />
 
+   
             <TouchableOpacity 
               onPress={CreateAccount}
             >
