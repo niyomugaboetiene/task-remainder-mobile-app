@@ -7,4 +7,12 @@ function Dashboard(){
 
     const res: any = axios.get('/http://localhost:5000/loggedIn', {withCredentials: true});
     setUserInfo(res);
+
+    return (
+        <View>
+            <Text>Welcome {userInfo}</Text>
+        </View>
+    )
 }
+
+export default Dashboard;
