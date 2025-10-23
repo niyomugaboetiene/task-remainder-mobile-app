@@ -39,6 +39,7 @@ export default  function AddTask() {
              console.log("ERROR", error)
         } finally {
            setLoading(false);
+           setSuccess("");
        }
     }
  
