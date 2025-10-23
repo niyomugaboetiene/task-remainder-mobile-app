@@ -1,5 +1,6 @@
 import express from "express";
-import bcrypt, { hash } from "bcrypt";
+import bcrypt from "bcrypt";
+import session from "express-session";
 import connection from "./conn.js";
 
 const route = express.Router();
@@ -28,7 +29,7 @@ route.get('/sign-up', async (req, res) => {
          if (result.length > 0) {
            const hashedPassword = result[0].password;
            if (bcrypt.compareSync(password, hashedPassword)) {
-            req.
+            req.session.user_id = result[0].user_id
            }
          }
    })

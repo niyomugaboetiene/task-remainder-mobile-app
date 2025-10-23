@@ -1,5 +1,7 @@
 import express from "express"
 import cors from "cors"
+import  dotenv  from "dotenv";
+dotenv.config();
 import taskRoute from "./taskRoutes.js"
 
 const app = express();
@@ -9,7 +11,8 @@ app.use(cors({
     credentials: true
 }))
 app.use('/', taskRoute);
+const PORT = process.env.PORT;
 
-app.listen(5000, () => {
-    console.log("http://localhost:5000")
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`)
 })
