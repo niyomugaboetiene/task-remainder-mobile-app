@@ -22,7 +22,7 @@ function SignUp() {
                 setSuccess("")
              }, 5000);
            setError("");
-           navigation.getParent()?.navigate("home" as never);
+           navigation.getParent()?.navigate("home");
 
         } catch (err: any) {
             const errorMessage = err.response?.data?.error;
