@@ -18,6 +18,10 @@ route.post('/sign-in', async (req, res) => {
    });
 });
 
+route.get('/sign-in', async (req, res) => {
+   const { username, email, password } = req.body;
+   const sql = "SELECT * FROM users WHERE username = ?, password = ?"
+})
 route.post('/add', (req, res) => {
   const { title, description, due_date, status } = req.body;
 
