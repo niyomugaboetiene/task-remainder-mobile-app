@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, TextInput } from "react-native"
 import { useState } from "react"
+import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 
  function SignIn() {
@@ -9,6 +10,7 @@ import axios from "axios";
    const [password, setPassword] = useState("");
    const [success, setSuccess] = useState("");
    const [error, setError] = useState("");
+   const navigation = useNavigation();
 
    const CreateAccount = async () => {
     try {

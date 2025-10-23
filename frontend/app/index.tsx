@@ -44,7 +44,7 @@ export default function Home() {
               <Tab.Screen name="Settings" component={Dashboard} />
             </Tab.Navigator>
           ) : (
-                 <SignUp navigation={navigation} />        
+                <SignUp navigation={navigation} />        
           )}
         </ScreenContent>
       </Container>

@@ -1,13 +1,15 @@
 import { View, Text, TouchableOpacity, TextInput} from "react-native"
 import axios from "axios"
 import { useState } from "react"; 
+import { useNavigation } from "@react-navigation/native";
 
-function SignUp({ navigation }) {
+function SignUp() {
        const [username, setUsername] = useState("");
        const [email, setEmail] = useState("");
        const [password, setPassword] = useState("");
        const [success, setSuccess] = useState("");
        const [error, setError] = useState("");
+       const navigation = useNavigation();
        const [isLoggedIn, setIsLoggedIn] = useState(false);
 
        const Login = async () => {
@@ -22,7 +24,7 @@ function SignUp({ navigation }) {
                 setSuccess("")
              }, 5000);
              setError("");
-             navigation.navigate("Home");
+             navigation.navigate("Home" as never);
         } catch (err: any) {
             const errorMessage = err.response?.data?.error;
             setError(errorMessage);
