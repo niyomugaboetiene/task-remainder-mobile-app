@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { useNavigation } from "expo-router";
 import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from "react-native"; 
 
 export default  function AddTask() {
@@ -10,6 +11,8 @@ export default  function AddTask() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const navigate = useNavigation();
+
 
     async function AddTask() {
       if (!title || !description || !status || !due_date) {
@@ -34,6 +37,7 @@ export default  function AddTask() {
            setDue_date("")
            setStatus("pending")
            setSuccess("Task added successfully");
+           navigate.navigate("home" as never);
         } catch (error) {
              setError("Unable to create task. try again later")
              console.log("ERROR", error)
