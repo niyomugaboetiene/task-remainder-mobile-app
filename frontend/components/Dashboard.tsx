@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native"
+import { View, Text, TouchableOpacity, FlatList } from "react-native"
 import axios from "axios"
 import { useState, useEffect } from "react"
 
@@ -34,6 +34,14 @@ function Dashboard(){
     return (
         <View>
             <Text>{getGreeting()} {userInfo} Welcome to task remainder </Text>
+            <Text>Your Pending tasks</Text>
+            <View>
+                    <Text>Learing python</Text>
+                    <Text>Learing python</Text>
+                    <Text>Learing python</Text>
+                    <Text>Learing python</Text>
+                    <Text>Learing python</Text>
+            </View>
         </View>
     )
 }
