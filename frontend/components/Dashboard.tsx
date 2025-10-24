@@ -107,10 +107,10 @@ function Dashboard(){
 
     return (
         <View className="">
-            <View className="bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-4">
-                  <Text className="font-light text-lg text-gray-500 ms-3">{getGreeting()} {userInfo}</Text>
-                  <Text className="ms-3 text-lg text-gray-500">Welcome to task remainder </Text>
-                  <View className="grid grid-cols-3  mt-7">
+            <View className="bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-4 h-[230px]">
+                  <Text className="text-lg font-bold text-black ms-3 text-center">{getGreeting()} {userInfo}</Text>
+                  <Text className="ms-3 text-lg text-black  text-center">Welcome to task remainder </Text>
+                  <View className="grid grid-cols-3  mt-7 ms-4">
                     <View className="bg-green-400 w-[100px] p-3 rounded-xl shadow-lg">
                        <Text className="text-center text-white font-bold text-[17px]">{pending}</Text>
                        <Text className="text-center text-white text-[14px] mt-2">Pending</Text>
@@ -119,9 +119,9 @@ function Dashboard(){
                        <Text className="text-center text-white text-[17px]">{fullTask}</Text>
                         <Text className="text-center text-white text-[14px] mt-2">Total</Text>
                     </View>  
-                     <View className="text-center text-white text-[17px]">
-                        <Text>Completed</Text>
-                       <Text>{completed}</Text>
+                     <View className="bg-green-400 w-[100px] p-3 rounded-xl shadow-lg">
+                         <Text className="text-center text-white text-[17px]">{completed}</Text>
+                        <Text className="text-center text-white text-[14px] mt-2">Completed</Text>
                     </View>
                   </View>
             </View>
