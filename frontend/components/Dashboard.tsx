@@ -133,11 +133,11 @@ function Dashboard(){
                    keyExtractor={(item) => item.id.toString()}
                    renderItem={({ item }) => (
                         <View className="bg-white p-4 rounded-xl mt-4 shadow-xl">
-                           <Text>{item.title}</Text>
-                           <Text>{item.description}</Text>
-                           <Text>{item.due_date}</Text>
-                           <Text>{item.status}</Text>
-                           <Text>{item.created_at}</Text>
+                           <Text>Title: {item.title}</Text>
+                           <Text>Description: {item.description}</Text>
+                           <Text>Finishing Date: {item.due_date}</Text>
+                           <Text>Status: {item.status}</Text>
+                           <Text>Created at: {item.created_at}</Text>
                         </View>
                    )}
                  / >
