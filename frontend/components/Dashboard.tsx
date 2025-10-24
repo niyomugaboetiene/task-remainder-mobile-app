@@ -116,17 +116,17 @@ function Dashboard(){
                        <Text className="text-center text-white text-[14px] mt-2">Pending</Text>
                     </View>   
                     <View className="bg-yellow-400 w-[100px] p-3 rounded-xl shadow-lg">
-                       <Text className="text-center text-white text-[17px]">{fullTask}</Text>
+                       <Text className="text-center text-white font-bold text-[17px]">{fullTask}</Text>
                         <Text className="text-center text-white text-[14px] mt-2">Total</Text>
                     </View>  
                      <View className="bg-purple-400 w-[100px] p-3 rounded-xl shadow-lg">
-                         <Text className="text-center text-white text-[17px]">{completed}</Text>
+                         <Text className="text-center font-bold text-white text-[17px]">{completed}</Text>
                         <Text className="text-center text-white text-[14px] mt-2">Completed</Text>
                     </View>
                   </View>
             </View>
             <View className="bg-slate-600 h-screen rounded-t-[30px] p-5">
-            <Text>Your Task</Text>
+            <Text className="text-xl text-white">Your Tasks</Text>
             <View>
                 <FlatList
                    data={userTasks}
