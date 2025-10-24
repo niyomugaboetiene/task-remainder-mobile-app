@@ -50,7 +50,15 @@ function Dashboard(){
 
     useEffect(() => {
         const fetchPendingTasks = async() => {
-            const res = 
+            try {
+                const res = await axios.get('http://localhost:5000/pending', { withCredentials: true });
+                setPending(res.data.pending);
+                setLoading(false); 
+            } catch (error: any) {
+                const ErrorMessage = error.response?.data?.error;
+                 setError(ErrorMessage)
+            }
+
         } 
     })
   
