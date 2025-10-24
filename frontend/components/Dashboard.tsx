@@ -33,7 +33,7 @@ function Dashboard(){
 
     return (
         <View>
-            <Text>{getGreeting()} {userInfo}</Text>
+            <Text>{getGreeting()} {userInfo} Welcome to task remainder </Text>
         </View>
     )
 }
