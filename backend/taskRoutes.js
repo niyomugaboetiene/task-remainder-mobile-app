@@ -103,7 +103,7 @@ route.get('/pending', (req, res) => {
 })
 
 route.get('/completed', (req, res) => {
-  const sqlCompleted = "SELECT COUNT(*) FROM tasks WHERE status=='completed' AND user_id = ?" ;
+  const sqlCompleted = "SELECT COUNT(*) FROM tasks WHERE status = 'completed' AND user_id = ?" ;
 
   connection.query(sqlCompleted, [req.session.user_id], (err, resultCompleted) => {
      if (err) return res.status(500).json({ error: err.message });
