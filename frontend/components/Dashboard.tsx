@@ -7,6 +7,9 @@ function Dashboard(){
     const [error, setError] = useState("");
     const [userTasks, setUserTasks] = useState({});
     const [loading, setLoading] = useState(false);
+    const [pending, setPending] = useState(null);
+    const [completed, setCompleted] = useState(null);
+    const [fullTask, setFullTask] = useState(null);
  
     useEffect(() => {
        const UserInfo = async() => {
@@ -44,6 +47,12 @@ function Dashboard(){
 
         fetchUserTasks();
     }) 
+
+    useEffect(() => {
+        const fetchPendingTasks = async() => {
+            const res = 
+        } 
+    })
   
     const getGreeting = () => {
         const hour = new Date().getHours();
