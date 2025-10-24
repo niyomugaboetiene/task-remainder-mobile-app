@@ -106,26 +106,26 @@ function Dashboard(){
     }
 
     return (
-        <View className="">
-            <View className="bg-gradient-to-br to-purple-400 from-purple-300 via-green-300 p-4 h-[230px] max-h-screen">
+        <View className="bg-gradient-to-br to-purple-400 from-purple-300 via-green-300 max-h-screen">
+            <View className=" p-4 h-[230px]">
                   <Text className="text-lg font-bold text-white ms-3 text-center mt-9">{getGreeting()}</Text>
                   <Text className="ms-3 text-[17px] text-white font-light text-center">Welcome to task remainder {userInfo} 👋</Text>
                   <View className="grid grid-cols-3  mt-7 ms-4">
-                    <View className="bg-green-400 w-[100px] p-3 rounded-xl shadow-lg">
+                    <View className="bg-blue-400 w-[100px] p-3 rounded-xl shadow-lg">
                        <Text className="text-center text-white font-bold text-[17px]">{pending}</Text>
                        <Text className="text-center text-white text-[14px] mt-2">Pending</Text>
                     </View>   
-                    <View className="bg-green-400 w-[100px] p-3 rounded-xl shadow-lg">
+                    <View className="bg-yellow-400 w-[100px] p-3 rounded-xl shadow-lg">
                        <Text className="text-center text-white text-[17px]">{fullTask}</Text>
                         <Text className="text-center text-white text-[14px] mt-2">Total</Text>
                     </View>  
-                     <View className="bg-green-400 w-[100px] p-3 rounded-xl shadow-lg">
+                     <View className="bg-purple-400 w-[100px] p-3 rounded-xl shadow-lg">
                          <Text className="text-center text-white text-[17px]">{completed}</Text>
                         <Text className="text-center text-white text-[14px] mt-2">Completed</Text>
                     </View>
                   </View>
             </View>
-            <View className="bg-green-300 h-screen rounded-t-[30px]">
+            <View className="bg-slate-600 h-screen rounded-t-[30px] p-5">
             <Text>Your Task</Text>
             <View>
                 <FlatList
