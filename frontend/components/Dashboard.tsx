@@ -25,7 +25,11 @@ function Dashboard(){
     }, []);
 
     useEffect(() => {
-        const 
+        const fetchUserTasks = async() => {
+            try {
+                const res = axios.get('http://localhost:5000/all')
+            }
+        }
     })
   
     const getGreeting = () => {
