@@ -94,7 +94,7 @@ route.get('/all', (req, res) => {
 
 route.get('/pending', (req, res) => {
   const sqlPending = "SELECT COUNT(*) AS pending_count FROM tasks WHERE status = 'pending' AND user_id = ?";
-
+  console.log(req.session.user_id)
   connection.query(sqlPending, [req.session.user_id], (err, resultPending) => {
     if (err) return res.status(500).json({ error: err.message });
     return res.status(200).json({ pending: resultPending[0].pending_count });
