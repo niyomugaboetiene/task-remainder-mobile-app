@@ -49,6 +49,22 @@ function Dashboard(){
     }, []) 
 
     useEffect(() => {
+        const fetchCompletedTasks = async() => {
+            try {
+                const res = await axios.get('http://localhost:5000/completed', { withCredentials: true });
+                setCompleted(res.data.completed);
+                setLoading(false); 
+            } catch (error: any) {
+                const ErrorMessage = error.response?.data?.error;
+                 setError(ErrorMessage)
+            } finally {
+                setLoading(false);
+            }
+        } 
+
+        fetchCompletedTasks();
+    }, []);
+    useEffect(() => {
         const fetchPendingTasks = async() => {
             try {
                 const res = await axios.get('http://localhost:5000/pending', { withCredentials: true });
@@ -63,7 +79,23 @@ function Dashboard(){
         } 
 
         fetchPendingTasks();
-    }, [])
+    }, []);
+    useEffect(() => {
+        const fetchPendingTasks = async() => {
+            try {
+                const res = await axios.get('http://localhost:5000/pending', { withCredentials: true });
+                setPending(res.data.pending);
+                setLoading(false); 
+            } catch (error: any) {
+                const ErrorMessage = error.response?.data?.error;
+                 setError(ErrorMessage)
+            } finally {
+                setLoading(false);
+            }
+        } 
+
+        fetchPendingTasks();
+    }, []);
   
     const getGreeting = () => {
         const hour = new Date().getHours();
