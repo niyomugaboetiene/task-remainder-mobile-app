@@ -110,10 +110,10 @@ function Dashboard(){
             <View className="bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-4">
                   <Text className="font-light text-lg text-gray-500 ms-3">{getGreeting()} {userInfo}</Text>
                   <Text className="ms-3 text-lg text-gray-500">Welcome to task remainder </Text>
-                  <View>
-                    <View>
+                  <View className="grid grid-cols-3  mt-4">
+                    <View className="bg-green-300 w-[100px] p-3">
                         <Text>Pending</Text>
-                       <Text>{pending}</Text>
+                       <Text className="text-center">{pending}</Text>
                     </View>   
                     
                     <View>
