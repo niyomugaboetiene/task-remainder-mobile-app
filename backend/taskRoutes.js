@@ -87,7 +87,7 @@ route.get('/all', (req, res) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     } else {
-      return res.status(200).json({ result });
+      return res.status(200).json({ results: result });
     }
   })
 })
