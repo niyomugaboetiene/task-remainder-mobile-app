@@ -116,9 +116,9 @@ route.get('/completed', (req, res) => {
 route.get('/total', (req, res) => {
   const TotalTasks = "SELECT SUM(*) FROM tasks WHERE WHERE id = ?";
 
-  connection.query(TotalTasks, [req.session.user_id], (err, totalRes) => {
+  connection.query(TotalTasks, [req.session.user_id], (err, totalResult) => {
      if (err) return res.status(500).json({ error: err.message });
-     return res.status(200).json({ completed: resultCompleted });
+     return res.status(200).json({ completed: totalResult });
   });
 
 })
