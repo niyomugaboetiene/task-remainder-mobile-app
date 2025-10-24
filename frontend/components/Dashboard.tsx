@@ -131,15 +131,13 @@ function Dashboard(){
                 <FlatList
                    data={userTasks}
                    keyExtractor={(item) => item.id.toString()}
-                   renderItem={({ item }) => {
-                    const bgColor = 
-                       item.status === 'pending' ? "#FDE68A":
-                       item.status === 'completed' ? "#34D399":
-                       "#E5E7EB";
+                   renderItem={({ item, index }) => {
+                    const colors = [ "#FACC15", "#818CF8", "#F87171", "#34D399", "#60A5FA","#FB923C"];
+                    const bgColor = colors[index % colors.length];
                        return (
-                          <View className="bg-white p-4 rounded-xl mt-4 shadow-xl">
-                               <Text>Title: {item.title}</Text>
-                               <Text>Description: {item.description}</Text>
+                          <View style={{ backgroundColor: bgColor }} className="p-2 mt-3 rounded-xl shadow-green-500 shadow-lg">
+                               <Text className="text-white text-[17px] font-extralight"><span className="font-bold">Title:</span> {item.title}</Text>
+                               <Text className="text-white text-[17px] font-extralight"><span className="font-bold">Description:</span> {item.description}</Text>
                                <Text>Finishing Date: {item.due_date}</Text>
                                <Text>Status: {item.status}</Text>
                                <Text>Created at: {item.created_at}</Text>
