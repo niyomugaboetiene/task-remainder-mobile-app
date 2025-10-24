@@ -93,17 +93,17 @@ route.get('/all', (req, res) => {
 })
 
 route.get('/pending', (req, res) => {
-  const sqlPending = "SELECT SUM(*) FROM tasks WHERE status=='pending' AND user_id = ?";
+  const sqlPending = "SELECT COUNT(*) AS pending_count FROM tasks WHERE status = 'pending' AND user_id = ?";
 
   connection.query(sqlPending, [req.session.user_id], (err, resultPending) => {
     if (err) return res.status(500).json({ error: err.message });
-    return res.status(200).json({ pending: resultPending });
+    return res.status(200).json({ pending: resultPending[0].pending_count });
   });
 
 })
 
 route.get('/completed', (req, res) => {
-  const sqlCompleted = "SELECT SUM(*) FROM tasks WHERE status=='completed' AND user_id = ?" ;
+  const sqlCompleted = "SELECT COUNT(*) FROM tasks WHERE status=='completed' AND user_id = ?" ;
 
   connection.query(sqlCompleted, [req.session.user_id], (err, resultCompleted) => {
      if (err) return res.status(500).json({ error: err.message });
@@ -114,7 +114,7 @@ route.get('/completed', (req, res) => {
 })
 
 route.get('/total', (req, res) => {
-  const TotalTasks = "SELECT SUM(*) FROM tasks WHERE WHERE id = ?";
+  const TotalTasks = "SELECT COUNT(*) FROM tasks WHERE WHERE user_id = ?";
 
   connection.query(TotalTasks, [req.session.user_id], (err, totalResult) => {
      if (err) return res.status(500).json({ error: err.message });
