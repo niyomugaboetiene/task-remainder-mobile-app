@@ -103,22 +103,22 @@ route.get('/pending', (req, res) => {
 })
 
 route.get('/completed', (req, res) => {
-  const sqlCompleted = "SELECT COUNT(*) FROM tasks WHERE status = 'completed' AND user_id = ?" ;
+  const sqlCompleted = "SELECT COUNT(*) AS completed_count FROM tasks WHERE status = 'completed' AND user_id = ?" ;
 
   connection.query(sqlCompleted, [req.session.user_id], (err, resultCompleted) => {
      if (err) return res.status(500).json({ error: err.message });
-     return res.status(200).json({ completed: resultCompleted });
+     return res.status(200).json({ completed: resultCompleted[0].completed_count });
   });
 
 
 })
 
 route.get('/total', (req, res) => {
-  const TotalTasks = "SELECT COUNT(*) FROM tasks WHERE WHERE user_id = ?";
+  const TotalTasks = "SELECT COUNT(*) AS total_count FROM tasks WHERE user_id = ?";
 
   connection.query(TotalTasks, [req.session.user_id], (err, totalResult) => {
      if (err) return res.status(500).json({ error: err.message });
-     return res.status(200).json({ total: totalResult });
+     return res.status(200).json({ total: totalResult[0].total_count });
   });
 
 })
