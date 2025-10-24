@@ -111,16 +111,15 @@ function Dashboard(){
                   <Text className="font-light text-lg text-gray-500 ms-3">{getGreeting()} {userInfo}</Text>
                   <Text className="ms-3 text-lg text-gray-500">Welcome to task remainder </Text>
                   <View className="grid grid-cols-3  mt-7">
-                    <View className="bg-green-400 w-[100px] p-4 rounded-xl shadow-lg">
-                        <Text className="text-center text-white font-bold text-[17px]">Pending</Text>
-                       <Text className="text-center text-white font-bold text-[15px]">{pending}</Text>
+                    <View className="bg-green-400 w-[100px] p-3 rounded-xl shadow-lg">
+                       <Text className="text-center text-white font-bold text-[17px]">{pending}</Text>
+                       <Text className="text-center text-white text-[14px] mt-2">Pending</Text>
                     </View>   
-                    <View className="bg-green-400 w-[100px] p-4 rounded-xl shadow-lg">
-                        <Text>Total</Text>
-                       <Text>{fullTask}</Text>
+                    <View className="bg-green-400 w-[100px] p-3 rounded-xl shadow-lg">
+                       <Text className="text-center text-white text-[17px]">{fullTask}</Text>
+                        <Text className="text-center text-white text-[14px] mt-2">Total</Text>
                     </View>  
-                    
-                     <View>
+                     <View className="text-center text-white text-[17px]">
                         <Text>Completed</Text>
                        <Text>{completed}</Text>
                     </View>
