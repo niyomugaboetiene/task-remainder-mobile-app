@@ -32,8 +32,8 @@ function Dashboard(){
     }
 
     return (
-        <View>
-            <Text>{getGreeting()} {userInfo} Welcome to task remainder </Text>
+        <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-5">
+            <Text className="text-center font-light text-xl">{getGreeting()} {userInfo} Welcome to task remainder </Text>
             <Text>Your Pending tasks</Text>
             <View>
                     <Text>Learing python</Text>
