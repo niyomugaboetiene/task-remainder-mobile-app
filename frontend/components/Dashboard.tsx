@@ -143,7 +143,7 @@ function Dashboard(){
                 return (
                     <View 
                         style={{ backgroundColor: bgColor }} 
-                        className="p-4 mb-3 rounded-2xl shadow-sm border border-gray-100"
+                        className="p-4 mb-4 rounded-2xl shadow-lg border border-gray-100"
                     >
                         <View className="flex-row justify-between items-start mb-2">
                             <Text className="text-lg font-semibold" style={{ color: textColor }}>
@@ -185,8 +185,8 @@ function Dashboard(){
             }
         />
     </View>
+  </View>
 </View>
-        </View>
     )
 }
 
