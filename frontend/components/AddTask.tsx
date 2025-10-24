@@ -50,7 +50,7 @@ export default  function AddTask() {
  
     return (
          <View className="min-h-screen bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-5">
-               <Text className="text-xl text-center text-black font-bold">Add Task</Text>
+               <Text className="text-xl text-center text-white font-bold">Add Task</Text>
                <View className="mt-4">
                 <Text className="text-lg text-gray-700">Title</Text>
                 <TextInput 
@@ -59,9 +59,7 @@ export default  function AddTask() {
                   onChangeText={setTitle}
                  />
              </View>
-            <View>
 
-            </View>
             <View className="mt-4">
               <Text className="text-lg text-gray-700">Description</Text>
               <TextInput
@@ -91,7 +89,7 @@ export default  function AddTask() {
               onPress={AddTask}
           >
             <View>
-               <Text className="text-center text-black font-bold">Add Task</Text>
+               <Text className="text-center text-white font-bold">Add Task</Text>
             </View>
 
           </TouchableOpacity>

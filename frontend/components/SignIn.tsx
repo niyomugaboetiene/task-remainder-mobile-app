@@ -10,7 +10,6 @@ import axios from "axios";
    const [password, setPassword] = useState("");
    const [success, setSuccess] = useState("");
    const [error, setError] = useState("");
-   const navigation = useNavigation();
 
    const CreateAccount = async () => {
     try {
