@@ -51,6 +51,7 @@ route.get('/loggedIn', (req, res) => {
   }
 });
 route.post('/add', (req, res) => {
+  const userId = req.session.user_id
   const { title, description, due_date, status } = req.body;
 
   if (!title || !description || !due_date || !status) {
@@ -58,13 +59,13 @@ route.post('/add', (req, res) => {
   }
 
   const sql = `
-    INSERT INTO tasks(title, description, due_date, status, created_at)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO tasks(title, description, due_date, status, created_at, user_id)
+    VALUES (?, ?, ?, ?, ?, ?)
   `;
 
   const createdAt = new Date(); 
 
-  connection.query(sql, [title, description, due_date, status, createdAt], (err, results) => {
+  connection.query(sql, [title, description, due_date, status, createdAt, userId], (err, results) => {
     if (err) {
       console.log("ERROR", err);
       return res.status(500).json({ error: "Database error" });
