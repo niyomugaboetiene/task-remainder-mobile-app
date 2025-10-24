@@ -22,7 +22,11 @@ function Dashboard(){
         }
        }
        UserInfo();
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const 
+    })
   
     const getGreeting = () => {
         const hour = new Date().getHours();
@@ -37,11 +41,7 @@ function Dashboard(){
             <Text>Welcome to task remainder </Text>
             <Text>Your Task</Text>
             <View>
-                    <Text>Learing python</Text>
-                    <Text>Learing python</Text>
-                    <Text>Learing python</Text>
-                    <Text>Learing python</Text>
-                    <Text>Learing python</Text>
+         
             </View>
         </View>
     )
