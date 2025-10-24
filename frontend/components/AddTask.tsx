@@ -26,7 +26,7 @@ export default  function AddTask() {
               title,
               description, 
               due_date, 
-              status
+              status,
            }, {
             headers: {
                'Content-Type': 'application/json'
