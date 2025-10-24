@@ -94,8 +94,20 @@ function Dashboard(){
                   <Text className="font-light text-lg">{getGreeting()} {userInfo}</Text>
                   <Text>Welcome to task remainder </Text>
                   <View>
-                    <Text>Pending</Text>
-                    <Text>{pending}</Text>
+                    <View>
+                        <Text>Pending</Text>
+                       <Text>{pending}</Text>
+                    </View>   
+                    
+                    <View>
+                        <Text>Total</Text>
+                       <Text>{fullTask}</Text>
+                    </View>  
+                    
+                     <View>
+                        <Text>Completed</Text>
+                       <Text>{completed}</Text>
+                    </View>
                   </View>
             </View>
             <View>
