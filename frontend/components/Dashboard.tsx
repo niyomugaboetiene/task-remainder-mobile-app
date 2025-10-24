@@ -127,12 +127,12 @@ function Dashboard(){
             </View>
             <View className="bg-slate-600 h-screen rounded-t-[30px] p-5">
             <Text className="text-xl text-white">Your Tasks</Text>
-            <View>
+            <View className="mt-4">
                 <FlatList
                    data={userTasks}
                    keyExtractor={(item) => item.id.toString()}
                    renderItem={({ item }) => (
-                        <View>
+                        <View className="bg-white p-4 rounded-xl mt-4 shadow-xl">
                            <Text>{item.title}</Text>
                            <Text>{item.description}</Text>
                            <Text>{item.due_date}</Text>
