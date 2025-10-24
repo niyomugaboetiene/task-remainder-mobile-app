@@ -28,8 +28,12 @@ function Dashboard(){
     useEffect(() => {
         const fetchUserTasks = async() => {
             try {
+                setLoading(true);
                 const res = await axios.get('http://localhost:5000/all', { withCredentials: true });
                 setUserTasks(res.data.results);
+                setLoading(false);
+            } catch (error) {
+                const errorMessage = error?.response?.error;
             }
         }
     })
