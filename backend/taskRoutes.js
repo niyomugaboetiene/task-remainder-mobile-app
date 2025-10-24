@@ -92,4 +92,20 @@ route.get('/all', (req, res) => {
   })
 })
 
+route.get('/status', (req, res) => {
+  const sqlPending = "SELECT SUM(*) FROM tasks WHERE status=='pending' AND user_id = ?";
+  const sqlCompleted = "SELECT SUM(*) FROM tasks WHERE status=='completed' AND user_id = ?" ;
+  const TotalTasks = "SELECT SUM(*) FROM tasks WHERE WHERE id = ?";
+
+  connection.query(sqlPending, [req.session.user_id], (err, resultPending) => {
+    if (err) return res.status(500).json({ error: err.message });
+    return res.status(200).json({ pending: resultPending });
+  });
+
+  connection.query(sqlCompleted, [req.session.user_id], (err, resultCompleted) => {
+    
+  })
+
+})
+
 export default route;
