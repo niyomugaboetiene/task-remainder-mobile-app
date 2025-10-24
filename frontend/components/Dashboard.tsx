@@ -125,7 +125,7 @@ function Dashboard(){
                     </View>
                   </View>
             </View>
-            <View>
+            <View className="bg-green-300 h-screen rounded-t-[30px]">
             <Text>Your Task</Text>
             <View>
                 <FlatList
