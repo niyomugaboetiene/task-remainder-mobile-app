@@ -46,7 +46,7 @@ function Dashboard(){
         }
 
         fetchUserTasks();
-    }) 
+    }, []) 
 
     useEffect(() => {
         const fetchPendingTasks = async() => {
@@ -57,10 +57,13 @@ function Dashboard(){
             } catch (error: any) {
                 const ErrorMessage = error.response?.data?.error;
                  setError(ErrorMessage)
+            } finally {
+                setLoading(false);
             }
-
         } 
-    })
+
+        fetchPendingTasks();
+    }, [])
   
     const getGreeting = () => {
         const hour = new Date().getHours();
@@ -74,6 +77,10 @@ function Dashboard(){
             <View className="bg-gradient-to-bl from-blue-300 to-gray-300 via-green-300 p-4">
                   <Text className="font-light text-lg">{getGreeting()} {userInfo}</Text>
                   <Text>Welcome to task remainder </Text>
+                  <View>
+                    <Text>Pending</Text>
+                    <Text>{pending}</Text>
+                  </View>
             </View>
             <View>
             <Text>Your Task</Text>
