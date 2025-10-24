@@ -82,8 +82,8 @@ route.post('/add', (req, res) => {
 
 // * select all task in the database
 route.get('/all', (req, res) => {
-  const sql = "SELECT * FROM tasks";
-  connection.query(sql, (err, result) => {
+  const sql = "SELECT * FROM tasks WHERE user_id = ?";
+  connection.query(sql, [req.session.user_id], (err, result) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     } else {
