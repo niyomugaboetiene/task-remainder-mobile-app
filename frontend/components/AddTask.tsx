@@ -30,7 +30,8 @@ export default  function AddTask() {
            }, {
             headers: {
                'Content-Type': 'application/json'
-            }
+            },
+            withCredentials: true
            });
            setTitle("");
            setDescription("")
