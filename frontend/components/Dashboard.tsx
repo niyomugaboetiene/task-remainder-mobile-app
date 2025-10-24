@@ -93,6 +93,7 @@ function Dashboard(){
             } finally {
                 setLoading(false);
             }
+            
         } 
 
         fetchPendingTasks();
