@@ -65,10 +65,10 @@ function Dashboard(){
         fetchCompletedTasks();
     }, []);
     useEffect(() => {
-        const fetchPendingTasks = async() => {
+        const fetchTotalTasks = async() => {
             try {
-                const res = await axios.get('http://localhost:5000/pending', { withCredentials: true });
-                setPending(res.data.pending);
+                const res = await axios.get('http://localhost:5000/total', { withCredentials: true });
+                setFullTask(res.data.total);
                 setLoading(false); 
             } catch (error: any) {
                 const ErrorMessage = error.response?.data?.error;
@@ -78,23 +78,7 @@ function Dashboard(){
             }
         } 
 
-        fetchPendingTasks();
-    }, []);
-    useEffect(() => {
-        const fetchPendingTasks = async() => {
-            try {
-                const res = await axios.get('http://localhost:5000/pending', { withCredentials: true });
-                setPending(res.data.pending);
-                setLoading(false); 
-            } catch (error: any) {
-                const ErrorMessage = error.response?.data?.error;
-                 setError(ErrorMessage)
-            } finally {
-                setLoading(false);
-            }
-        } 
-
-        fetchPendingTasks();
+        fetchTotalTasks();
     }, []);
   
     const getGreeting = () => {
