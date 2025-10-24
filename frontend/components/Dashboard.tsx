@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 function Dashboard(){
     const [userInfo, setUserInfo] = useState("");
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
     const [userTasks, setUserTasks] = useState({});
     const [loading, setLoading] = useState(false);
  
@@ -32,8 +32,13 @@ function Dashboard(){
                 const res = await axios.get('http://localhost:5000/all', { withCredentials: true });
                 setUserTasks(res.data.results);
                 setLoading(false);
+                setError("");
             } catch (error: any) {
                 const errorMessage = error.response?.data?.error;
+                setError(errorMessage);
+                setLoading(false);
+            } finally {
+                setLoading(false);
             }
         }
     })
