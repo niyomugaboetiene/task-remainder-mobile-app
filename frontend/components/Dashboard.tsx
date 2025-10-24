@@ -107,7 +107,7 @@ function Dashboard(){
 
     return (
         <View className="">
-            <View className="bg-gradient-to-br to-purple-400 from-purple-300 via-green-300 p-4 h-[230px]">
+            <View className="bg-gradient-to-br to-purple-400 from-purple-300 via-green-300 p-4 h-[230px] max-h-screen">
                   <Text className="text-lg font-bold text-white ms-3 text-center mt-9">{getGreeting()}</Text>
                   <Text className="ms-3 text-[17px] text-white font-light text-center">Welcome to task remainder {userInfo} 👋</Text>
                   <View className="grid grid-cols-3  mt-7 ms-4">
