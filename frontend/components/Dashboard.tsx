@@ -79,6 +79,23 @@ function Dashboard(){
         } 
 
         fetchTotalTasks();
+    }, []); 
+    
+    useEffect(() => {
+        const fetchPendingTasks = async() => {
+            try {
+                const res = await axios.get('http://localhost:5000/pending', { withCredentials: true });
+                setPending(res.data.total);
+                setLoading(false); 
+            } catch (error: any) {
+                const ErrorMessage = error.response?.data?.error;
+                 setError(ErrorMessage)
+            } finally {
+                setLoading(false);
+            }
+        } 
+
+        fetchPendingTasks();
     }, []);
   
     const getGreeting = () => {
