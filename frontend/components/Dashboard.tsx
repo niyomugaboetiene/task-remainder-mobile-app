@@ -41,6 +41,8 @@ function Dashboard(){
                 setLoading(false);
             }
         }
+
+        fetchUserTasks();
     })
   
     const getGreeting = () => {
@@ -56,7 +58,20 @@ function Dashboard(){
             <Text>Welcome to task remainder </Text>
             <Text>Your Task</Text>
             <View>
-         
+                <FlatList
+                   data={userTasks}
+                   keyExtractor={(item) => item.id.toString()}
+                   renderItem={({ item }) => (
+                        <View>
+                           <Text>{item.title}</Text>
+                           <Text>{item.description}</Text>
+                           <Text>{item.due_date}</Text>
+                           <Text>{item.status}</Text>
+                           <Text>{item.created_at}</Text>
+                        </View>
+                   )}
+                 / >
+
             </View>
         </View>
     )
